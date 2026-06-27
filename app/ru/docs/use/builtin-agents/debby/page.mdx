@@ -1,0 +1,36 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Debby",
+  "Debby - встроенный model debate workflow Goalrail для критики, сравнения и synthesis.",
+  {
+    eyebrow: "Встроенные workflows",
+    path: "/ru/docs/use/builtin-agents/debby",
+  },
+);
+
+# Debby
+
+Debby запускает debate между несколькими моделями: каждая дает позицию,
+критикует аргументы другой стороны, затем Goalrail собирает итоговый synthesis.
+
+```
+goalrail debby
+```
+
+## Когда использовать
+
+- Нужно проверить архитектурное решение.
+- Есть несколько вероятных вариантов и нужен разбор tradeoffs.
+- Важно найти слабые места до реализации.
+
+## Как читать результат
+
+Смотрите не только на финальный answer, но и на objections. Полезные debate
+runs обычно показывают, где решение зависит от предположений, данных или
+операционных ограничений.
+
+## Дальше
+
+- [Установка Goalrail](/ru/quickstart/install)
+- [Встроенные workflows](/ru/docs/use/builtin-agents)

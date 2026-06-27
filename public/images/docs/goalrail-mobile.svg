@@ -1,0 +1,19 @@
+<svg width="420" height="720" viewBox="0 0 420 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="420" height="720" rx="44" fill="#17151D"/>
+  <rect x="16" y="16" width="388" height="688" rx="38" fill="#FCFBFE"/>
+  <rect x="42" y="36" width="336" height="32" rx="16" fill="#17151D"/>
+  <text x="48" y="112" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="780" fill="#17151D">Goalrail</text>
+  <text x="48" y="142" font-family="Inter, Arial, sans-serif" font-size="14" fill="#6E6678">goalrail.dev</text>
+  <rect x="48" y="174" width="256" height="74" rx="18" fill="#EFEAF5"/>
+  <text x="70" y="207" font-family="Inter, Arial, sans-serif" font-size="16" fill="#332D40">Check the desktop build status.</text>
+  <rect x="82" y="284" width="290" height="116" rx="20" fill="#17151D"/>
+  <text x="108" y="322" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#92D3B5">Goalrail</text>
+  <text x="108" y="354" font-family="Inter, Arial, sans-serif" font-size="16" fill="#F4F2F7">Build is complete.</text>
+  <text x="108" y="382" font-family="Inter, Arial, sans-serif" font-size="13" fill="#A8A4B4">Open files or reply from your phone.</text>
+  <rect x="48" y="432" width="324" height="120" rx="18" fill="#FFFFFF" stroke="#E4DFEA"/>
+  <text x="72" y="468" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#17151D">Files</text>
+  <text x="72" y="506" font-family="Inter, Arial, sans-serif" font-size="14" fill="#332D40">app/App.tsx</text>
+  <text x="72" y="536" font-family="Inter, Arial, sans-serif" font-size="14" fill="#332D40">src/main.ts</text>
+  <rect x="48" y="610" width="324" height="58" rx="18" fill="#FFFFFF" stroke="#DDD6E5" stroke-width="2"/>
+  <text x="72" y="646" font-family="Inter, Arial, sans-serif" font-size="15" fill="#7D7689">Reply from mobile...</text>
+</svg>

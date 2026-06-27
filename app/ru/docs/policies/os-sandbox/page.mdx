@@ -1,0 +1,53 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "OS sandbox config",
+  "Настройте Omnibox: filesystem, network, environment и credential boundaries для Goalrail agents.",
+  {
+    eyebrow: "Policies",
+    path: "/ru/docs/policies/os-sandbox",
+  },
+);
+
+# OS sandbox config
+
+Omnibox ограничивает доступ агента на уровне OS. На Linux используется
+`bubblewrap`, на macOS - Seatbelt. Если sandbox requested, но backend
+недоступен, Goalrail должен ошибиться, а не запускать агент без sandbox.
+
+## Минимальный config
+
+```
+sandbox:
+  filesystem:
+    writable:
+      - .
+    readable:
+      - ~/.cache/goalrail
+  network:
+    allow:
+      - api.openai.com
+      - api.anthropic.com
+```
+
+## Filesystem
+
+Разделяйте read-only и writable paths. По умолчанию давайте агенту только
+рабочую директорию и необходимые caches.
+
+## Network
+
+Network allowlist должен содержать только endpoints, которые нужны конкретному
+workflow: model providers, package registries, internal APIs.
+
+## Environment
+
+Передавайте внутрь только нужные environment variables. Secrets лучше выдавать
+через controlled credential access, а не пробрасывать весь host environment.
+
+## Что не покрывает
+
+Sandbox не заменяет policies. Omnibox задает hard boundary, а policies решают,
+какие действия разрешены внутри этого boundary.
+
+См. также [обзор Omnibox](/ru/docs/omnibox).

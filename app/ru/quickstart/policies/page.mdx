@@ -1,0 +1,75 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Туториал: контекстные политики",
+  "Добавьте context-aware policies к live session: предупреждения по расходам, approval prompts и блокировки рискованных действий.",
+  {
+    eyebrow: "Quickstart",
+    path: "/ru/quickstart/policies",
+  },
+);
+
+# Туториал: контекстные политики
+
+Goalrail поставляется с набором policies, которые можно подключить к любой live
+session без кода. Они смотрят на действия агента и вмешиваются там, где нужно:
+предупреждают о расходах, запрашивают approval или блокируют рискованное
+действие.
+
+**Время:** около 5 минут. **Все запускается локально.**
+
+## 1. Создайте новую сессию
+
+Откройте web UI и стартуйте любую agent session. В примерах ниже используется
+Claude Code, но policies работают одинаково для всех agent types.
+
+![Starting a new Claude Code session in the Goalrail web UI](/images/docs/goalrail-web-session.svg)
+
+## 2. Добавьте policy
+
+Нажмите кнопку info `(i)` вверху страницы. В session panel будет текущая
+стоимость сессии и блок **Policies**. Нажмите `+`, выберите policy и заполните
+настройки.
+
+Для примера возьмем **Session Cost Budget**. Эта policy отслеживает расходы
+сессии на модели.
+
+![Opening the session info panel, choosing Session Cost Budget, and configuring its limits](/images/docs/goalrail-policy-setup.svg)
+
+У cost policy есть два типа guardrails:
+
+- **Soft limits**: пороги предупреждения. Когда сессия пересекает такой порог,
+  следующий tool call остановится и попросит подтверждение.
+- **Hard limit**: жесткий предел для expensive models. После пересечения
+  expensive model calls блокируются, пока вы не переключитесь на более дешевую
+  модель или не измените настройки.
+
+После сохранения policy начинает работать сразу для текущей сессии.
+
+## 3. Посмотрите, как policy срабатывает
+
+Следите за running cost в панели `(i)`.
+
+### Soft limit
+
+Когда расход пересечет soft limit, попросите агента вызвать любой tool. Вместо
+автоматического продолжения Goalrail покажет approval prompt.
+
+![Approval prompt shown after the session cost crosses the soft limit](/images/docs/goalrail-policy-enforcement.svg)
+
+### Hard limit
+
+Когда расход достигнет hard limit, policy заблокирует следующие tool calls,
+которые используют expensive model. Переключитесь на более дешевую модель, чтобы
+продолжить.
+
+![Expensive models blocked after the session hits the hard cost limit, then unblocked by downgrading](/images/docs/goalrail-policy-enforcement.svg)
+
+Такой же цикл - warn, ask, block - используется и в других built-in policies.
+Их можно комбинировать под вашу tolerances к расходам, данным и действиям.
+
+## Дальше
+
+- [Обзор контекстных политик](/ru/docs/policies/overview): уровни, scope и способы подключения.
+- [Встроенные политики](/ru/docs/policies/builtin): каталог доступных policies.
+- [Свои политики](/ru/docs/policies/custom): Python-функции для правил, которых нет из коробки.

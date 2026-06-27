@@ -1,0 +1,26 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="720" rx="32" fill="#17151D"/>
+  <rect x="62" y="58" width="1156" height="604" rx="30" fill="#211E31" stroke="#403B4D" stroke-width="2"/>
+  <text x="104" y="124" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="760" fill="#F4F2F7">Policies before side effects</text>
+  <text x="104" y="162" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#B7B1C5">Budgets, tools, filesystem, network, and secrets are checked against session state.</text>
+  <rect x="104" y="220" width="492" height="318" rx="24" fill="#17151D" stroke="#3E3A4F"/>
+  <text x="136" y="270" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#B7B1C5">Tool request</text>
+  <text x="136" y="312" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="760" fill="#FFFFFF">Run deployment script</text>
+  <rect x="136" y="348" width="392" height="56" rx="15" fill="#2A2738"/>
+  <text x="158" y="383" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#F4F2F7">Network access: external</text>
+  <rect x="136" y="424" width="392" height="56" rx="15" fill="#2A2738"/>
+  <text x="158" y="459" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#F4F2F7">Estimated cost: over budget</text>
+  <path d="M618 379H706" stroke="#ED1C9C" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 12"/>
+  <path d="M696 363L716 379L696 395" stroke="#ED1C9C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="738" y="214" width="376" height="330" rx="26" fill="#FFFFFF"/>
+  <text x="778" y="272" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="760" fill="#15131A">Approval required</text>
+  <text x="778" y="312" font-family="Inter, system-ui, sans-serif" font-size="17" fill="#5C5765">The policy rail blocked this action until a human confirms the risk.</text>
+  <rect x="778" y="360" width="296" height="12" rx="6" fill="#ECE8EE"/>
+  <rect x="778" y="360" width="218" height="12" rx="6" fill="#ED1C9C"/>
+  <text x="778" y="408" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="650" fill="#15131A">Session budget</text>
+  <text x="996" y="408" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="700" fill="#ED1C9C">91%</text>
+  <rect x="778" y="444" width="136" height="48" rx="14" fill="#17151D"/>
+  <text x="846" y="475" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF">Deny</text>
+  <rect x="932" y="444" width="142" height="48" rx="14" fill="#92D3B5"/>
+  <text x="1003" y="475" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="700" fill="#15131A">Allow once</text>
+</svg>

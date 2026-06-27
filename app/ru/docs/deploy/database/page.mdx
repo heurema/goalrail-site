@@ -1,0 +1,50 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "База данных",
+  "Goalrail server хранит history, accounts и artifacts в Postgres или SQLite.",
+  {
+    eyebrow: "Deploy",
+    path: "/ru/docs/deploy/database",
+  },
+);
+
+# База данных
+
+Goalrail server хранит session history, accounts и artifacts в базе данных.
+Поддерживаются Postgres и SQLite с одной схемой и migrations.
+
+## Postgres
+
+Postgres - production-вариант и обязательный выбор, если у вас несколько server
+instances.
+
+- Render и Railway могут поднять managed Postgres автоматически.
+- Для других платформ укажите `DATABASE_URL`.
+- Подходят `postgres://` и `postgresql://` URLs.
+
+```
+DATABASE_URL=postgresql://user:pass@host:5432/goalrail
+```
+
+## SQLite
+
+SQLite подходит для demo и single-instance installs.
+
+```
+DATABASE_URL=sqlite:////data/artifacts/chat.db
+```
+
+Файл `.db` должен лежать на persistent disk или volume.
+
+## Сравнение
+
+|                 | Postgres                        | SQLite            |
+| --------------- | ------------------------------- | ----------------- |
+| Multi-instance  | Да                              | Нет               |
+| Managed backups | Да, если провайдер поддерживает | Нет               |
+| Setup           | Нужна база                      | Не нужен          |
+| Лучше для       | Production                      | Demo, single-user |
+
+Первый запуск с удаленным Postgres выполняет migrations по сети и может занять
+около минуты. Убедитесь, что healthcheck grace period это допускает.

@@ -1,0 +1,28 @@
+<svg width="900" height="720" viewBox="0 0 900 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="720" rx="18" fill="#FCFBFE"/>
+  <rect x="24" y="24" width="852" height="672" rx="18" fill="#FFFFFF" stroke="#E4DFEA" stroke-width="2"/>
+  <rect x="24" y="24" width="852" height="56" rx="18" fill="#17151D"/>
+  <text x="56" y="59" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="760" fill="#F4F2F7">Goalrail Polly</text>
+  <rect x="56" y="112" width="398" height="540" rx="16" fill="#17151D"/>
+  <text x="84" y="158" font-family="Menlo, Consolas, monospace" font-size="16" fill="#A8A4B4">$ goalrail polly</text>
+  <text x="84" y="196" font-family="Menlo, Consolas, monospace" font-size="16" fill="#F4F2F7">Starting orchestrator...</text>
+  <text x="84" y="234" font-family="Menlo, Consolas, monospace" font-size="16" fill="#92D3B5">Web UI: http://localhost:6767</text>
+  <text x="84" y="292" font-family="Menlo, Consolas, monospace" font-size="16" fill="#F4F2F7">Plan: split task into 3 workers</text>
+  <text x="84" y="330" font-family="Menlo, Consolas, monospace" font-size="16" fill="#F4F2F7">Review: cross-check before merge</text>
+  <rect x="84" y="530" width="302" height="54" rx="14" fill="#24202F" stroke="#494254"/>
+  <text x="108" y="563" font-family="Inter, Arial, sans-serif" font-size="15" fill="#A8A4B4">Ask Polly anything...</text>
+  <rect x="494" y="112" width="350" height="540" rx="16" fill="#F5F2F8"/>
+  <text x="528" y="158" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="760" fill="#17151D">Agents</text>
+  <rect x="528" y="194" width="282" height="66" rx="16" fill="#FFFFFF" stroke="#E4DFEA"/>
+  <text x="552" y="226" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#17151D">polly</text>
+  <text x="552" y="246" font-family="Inter, Arial, sans-serif" font-size="13" fill="#6E6678">orchestrating</text>
+  <rect x="528" y="286" width="282" height="66" rx="16" fill="#FFFFFF" stroke="#E4DFEA"/>
+  <text x="552" y="318" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#17151D">codex-worker</text>
+  <text x="552" y="338" font-family="Inter, Arial, sans-serif" font-size="13" fill="#6E6678">implementing</text>
+  <rect x="528" y="378" width="282" height="66" rx="16" fill="#FFFFFF" stroke="#E4DFEA"/>
+  <text x="552" y="410" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#17151D">review-worker</text>
+  <text x="552" y="430" font-family="Inter, Arial, sans-serif" font-size="13" fill="#6E6678">reviewing</text>
+  <rect x="528" y="492" width="282" height="86" rx="16" fill="#17151D"/>
+  <text x="552" y="528" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#92D3B5">Cross-vendor review</text>
+  <text x="552" y="558" font-family="Inter, Arial, sans-serif" font-size="14" fill="#F4F2F7">Each worker has its own worktree.</text>
+</svg>

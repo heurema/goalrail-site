@@ -1,0 +1,106 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "MCP и tools",
+  "Добавьте агенту MCP servers, Python functions, sub-agents и inherited tools.",
+  {
+    eyebrow: "Build",
+    path: "/ru/docs/build/tools",
+  },
+);
+
+# MCP и tools
+
+Tools дают агенту возможности за пределами обычного диалога. Они описываются в
+YAML под ключом `tools`.
+
+Goalrail поддерживает четыре типа: MCP servers, Python functions, sub-agents и
+inherited tools.
+
+## MCP servers
+
+MCP servers публикуют tools через стандартный protocol.
+
+### Local stdio
+
+```
+tools:
+  my-server:
+    type: mcp
+    command: node
+    args: [dist/server.js]
+    env:
+      API_KEY: ${MY_API_KEY}
+```
+
+### Remote HTTP/SSE
+
+```
+tools:
+  docs-api:
+    type: mcp
+    url: https://example.com/mcp
+    headers:
+      Authorization: "Bearer ${API_TOKEN}"
+```
+
+Поле `tools` внутри MCP config может ограничить список exposed tools. Если его
+не указать, агент получит все tools сервера.
+
+## Python function tools
+
+Любой Python callable можно дать агенту как tool:
+
+```
+tools:
+  summarize_file:
+    type: function
+    description: Summarize a local text file.
+    callable: my_package.tools.summarize_file
+    parameters:
+      type: object
+      properties:
+        path:
+          type: string
+      required: [path]
+```
+
+Если `parameters` не указан, Goalrail может построить schema из type
+annotations и signature.
+
+## Sub-agent tools
+
+Supervisor agent может делегировать работу sub-agent:
+
+```
+tools:
+  reviewer:
+    type: agent
+    description: Review proposed code changes.
+    prompt: |
+      You are a careful code reviewer.
+    executor:
+      harness: claude-sdk
+      model: claude-sonnet-4-6
+    pass_history: true
+    max_sessions: 2
+```
+
+Sub-agent может иметь собственные [harness](/ru/docs/build/harnesses), model,
+tools и [policies](/ru/docs/policies/overview).
+
+## Tool inheritance
+
+`inherit` передает tool от parent agent к sub-agent без дублирования config:
+
+```
+tools:
+  researcher:
+    type: agent
+    prompt: Research and summarize.
+    tools:
+      word_count: inherit
+```
+
+`spec: self` клонирует весь parent spec для sub-agent, когда нужно сохранить
+одинаковые tools, prompt и config.

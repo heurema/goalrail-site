@@ -1,0 +1,52 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Промпты и skills",
+  "Настройте поведение агента через system prompt и reusable skills.",
+  {
+    eyebrow: "Build",
+    path: "/ru/docs/build/prompts",
+  },
+);
+
+# Промпты и skills
+
+Prompt задает роль и рабочие правила агента. Skills позволяют вынести
+повторяемые инструкции в отдельные reusable blocks.
+
+## Prompt
+
+```
+name: reviewer
+prompt: |
+  You are a careful code reviewer.
+  Focus on correctness, tests, security, and maintainability.
+executor:
+  type: goalrail
+  harness: claude-sdk
+  model: claude-sonnet-4-6
+```
+
+Пишите prompt как рабочий контракт: какие задачи выполнять, какие риски
+смотреть, когда останавливать работу и какие артефакты оставлять.
+
+## Skills
+
+Skills удобны, когда один и тот же набор инструкций нужен нескольким агентам:
+review checklist, release workflow, research protocol или deploy steps.
+
+```
+skills:
+  - code-review
+  - release-checklist
+```
+
+Skill может описывать команды, файлы, ограничения и критерии готовности. Агент
+получает его как дополнительный контекст при выполнении workflow.
+
+## Практика
+
+- Держите prompt коротким и проверяемым.
+- Не смешивайте role, tool config и policy logic в одном тексте.
+- Повторяемые инструкции выносите в skills.
+- Ограничения безопасности задавайте через [policies](/ru/docs/policies/overview), а не только через prompt.

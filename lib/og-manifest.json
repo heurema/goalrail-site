@@ -1,0 +1,292 @@
+{
+  "/en/docs/build/harnesses": {
+    "title": "Harnesses",
+    "description": "The harness is the runtime that executes your agent loop. Swap one line of YAML to switch between Claude, Codex, and other runtimes.",
+    "eyebrow": "Build"
+  },
+  "/en/docs/build/models": {
+    "title": "Models & Credentials",
+    "description": "Declare your model in agent YAML and let Goalrail manage the credentials that authenticate to each provider.",
+    "eyebrow": "Build"
+  },
+  "/en/docs/build/prompts": {
+    "title": "Prompts & Skills",
+    "description": "Shape agent behavior with system prompts, and extend it with skills: reusable instruction sets the agent loads on demand.",
+    "eyebrow": "Build"
+  },
+  "/en/docs/build/tools": {
+    "title": "MCP & Tools",
+    "description": "Give your agent capabilities beyond conversation. Declare tools and MCP servers in your agent YAML, each with a name you choose.",
+    "eyebrow": "Build"
+  },
+  "/en/docs/collaborate/auth": {
+    "title": "Auth & SSO",
+    "description": "Authenticate users in Goalrail three ways. Pick the approach that fits your setup, from simple tokens to full SSO.",
+    "eyebrow": "Collaborate"
+  },
+  "/en/docs/collaborate": {
+    "title": "Pair Programming",
+    "description": "Goalrail is multi-user: share a live session by link, let a teammate co-drive, or fork a conversation across terminal, web, and mobile.",
+    "eyebrow": "Collaborate"
+  },
+  "/en/docs/deploy/cloud-sandbox-host": {
+    "title": "Cloud Sandbox Host",
+    "description": "Move the Goalrail runner from your laptop to a remote container so your agent keeps working in an isolated cloud environment.",
+    "eyebrow": "Deploy"
+  },
+  "/en/docs/deploy/database": {
+    "title": "Database",
+    "description": "The Goalrail server persists session history, accounts, and artifacts. Choose between Postgres and SQLite, with the same schema and migrations.",
+    "eyebrow": "Deploy"
+  },
+  "/en/docs/deploy/overview": {
+    "title": "Shared Server",
+    "description": "Deploy the Goalrail server so your agents are reachable from your phone, shareable with teammates, and running while your laptop sleeps.",
+    "eyebrow": "Deploy"
+  },
+  "/en/docs/interact/desktop": {
+    "title": "Desktop App",
+    "description": "The Goalrail desktop app brings the full web UI to a native window, with notifications, a dock badge, and multiple windows.",
+    "eyebrow": "Interact"
+  },
+  "/en/docs/interact/mobile": {
+    "title": "Mobile",
+    "description": "Access the same Goalrail session on terminal, browser, and phone simultaneously. Start on your laptop, continue on your phone.",
+    "eyebrow": "Interact"
+  },
+  "/en/docs/interact/terminal": {
+    "title": "Terminal",
+    "description": "Goalrail's keyboard-first default interface, with streaming output and real-time tool execution for people who live in the terminal.",
+    "eyebrow": "Interact"
+  },
+  "/en/docs/interact/web-ui": {
+    "title": "Web UI",
+    "description": "The Goalrail web UI starts automatically with every session; open the printed URL in any browser to work with your agent.",
+    "eyebrow": "Interact"
+  },
+  "/en/docs/omnibox": {
+    "title": "Omnibox",
+    "description": "Omnibox is Goalrail's secure OS-level sandbox that wraps any agent to run it unattended without exposing your credentials, files, or network.",
+    "eyebrow": "Security"
+  },
+  "/en/docs/policies/builtin": {
+    "title": "Builtin Policies",
+    "description": "Built-in Goalrail policies for common safety and cost-control guardrails. Apply them by name or reference them in YAML.",
+    "eyebrow": "Policies"
+  },
+  "/en/docs/policies/custom": {
+    "title": "Custom Policies",
+    "description": "When built-in policies aren't enough, write your own in Python, register them on the server, and use them like builtins.",
+    "eyebrow": "Policies"
+  },
+  "/en/docs/policies/os-sandbox": {
+    "title": "Omnibox (OS Sandbox)",
+    "description": "Omnibox is Goalrail's secure OS sandbox: restrict filesystem and network access and hide credentials for unattended, locked-down agents.",
+    "eyebrow": "Policies"
+  },
+  "/en/docs/policies/overview": {
+    "title": "Contextual Policies",
+    "description": "Policies control what your Goalrail can do, intercepting every action to allow, ask for approval, or deny it in real time.",
+    "eyebrow": "Policies"
+  },
+  "/en/docs/use/builtin-agents/debby": {
+    "title": "Debby",
+    "description": "Debby asks two models the same question and runs a multi-round debate where each critiques and refines the other's answer.",
+    "eyebrow": "Use Cases"
+  },
+  "/en/docs/use/builtin-agents": {
+    "title": "Built-in Multi-AI Agents",
+    "description": "Goalrail ships with multi-agent orchestrators that combine different AI agents into a single workflow, ready to run out of the box.",
+    "eyebrow": "Use Cases"
+  },
+  "/en/docs/use/builtin-agents/polly": {
+    "title": "Polly",
+    "description": "Polly is a supervisor that delegates sub-tasks to sub-agents on separate harnesses and worktrees, with cross-agent review and human-decided merges.",
+    "eyebrow": "Use Cases"
+  },
+  "/en/docs/use/coding-agents": {
+    "title": "Coding Agents",
+    "description": "Run Claude Code or Codex through Goalrail with one command and get a web UI, persistent sessions, collaboration, mobile, and policies.",
+    "eyebrow": "Use Cases"
+  },
+  "/en/docs/use/custom-agents": {
+    "title": "Custom Agents",
+    "description": "Define a custom agent in a short YAML file, with no code or frameworks, and get the full Goalrail platform around it.",
+    "eyebrow": "Use Cases"
+  },
+  "/en/faq": {
+    "title": "FAQ",
+    "description": "Answers to common questions about Goalrail: what it is, how it works, and how to get started.",
+    "eyebrow": "Help"
+  },
+  "/en/quickstart/coding-agent": {
+    "title": "Tutorial: Coding Agent",
+    "description": "Tutorial: see what Goalrail adds on top of Claude Code or Codex, including a web UI, mobile access, session sharing, and mid-conversation agent switching.",
+    "eyebrow": "Quickstart"
+  },
+  "/en/quickstart/collaborate": {
+    "title": "Tutorial: Collaborate from Anywhere",
+    "description": "Tutorial: deploy a server to access agents from your phone, share live sessions with teammates, and run agents on cloud sandbox hosts.",
+    "eyebrow": "Quickstart"
+  },
+  "/en/quickstart/install": {
+    "title": "Install",
+    "description": "Install the Goalrail CLI with a single command — via the installer script, uv, pip, or Homebrew — and grab the macOS desktop app.",
+    "eyebrow": "Quickstart"
+  },
+  "/en/quickstart/policies": {
+    "title": "Tutorial: Contextual Policies",
+    "description": "Tutorial: attach context-aware policies to a live session to warn on spend, pause for approval, or block risky actions, with no code required.",
+    "eyebrow": "Quickstart"
+  },
+  "/en/quickstart/polly": {
+    "title": "Tutorial: Polly (Multi-AI Coding)",
+    "description": "Tutorial: see Polly in practice, a multi-agent coding orchestrator that delegates sub-tasks across AI agents with built-in cross-vendor review.",
+    "eyebrow": "Quickstart"
+  },
+  "/ru/docs/build/harnesses": {
+    "title": "Harnesses",
+    "description": "Harness определяет runtime, который исполняет agent loop внутри Goalrail.",
+    "eyebrow": "Build"
+  },
+  "/ru/docs/build/models": {
+    "title": "Модели и доступы",
+    "description": "Опишите model в YAML, а Goalrail поможет настроить credentials: API keys, subscriptions или gateways.",
+    "eyebrow": "Build"
+  },
+  "/ru/docs/build/prompts": {
+    "title": "Промпты и skills",
+    "description": "Настройте поведение агента через system prompt и reusable skills.",
+    "eyebrow": "Build"
+  },
+  "/ru/docs/build/tools": {
+    "title": "MCP и tools",
+    "description": "Добавьте агенту MCP servers, Python functions, sub-agents и inherited tools.",
+    "eyebrow": "Build"
+  },
+  "/ru/docs/collaborate/auth": {
+    "title": "Auth и SSO",
+    "description": "Настройте auth для Goalrail server: встроенные accounts, OIDC SSO или trusted proxy headers.",
+    "eyebrow": "Collaboration"
+  },
+  "/ru/docs/collaborate": {
+    "title": "Совместная работа",
+    "description": "Делитесь live sessions, co-drive агентами и делайте forks между terminal, web UI и mobile.",
+    "eyebrow": "Collaboration"
+  },
+  "/ru/docs/deploy/cloud-sandbox-host": {
+    "title": "Cloud sandbox host",
+    "description": "Перенесите Goalrail runner с laptop в isolated remote container.",
+    "eyebrow": "Deploy"
+  },
+  "/ru/docs/deploy/database": {
+    "title": "База данных",
+    "description": "Goalrail server хранит history, accounts и artifacts в Postgres или SQLite.",
+    "eyebrow": "Deploy"
+  },
+  "/ru/docs/deploy/overview": {
+    "title": "Общий сервер",
+    "description": "Разверните Goalrail server, чтобы sessions были доступны с телефона, для команды и через cloud sandbox hosts.",
+    "eyebrow": "Deploy"
+  },
+  "/ru/docs/interact/desktop": {
+    "title": "Desktop app",
+    "description": "Установите Goalrail desktop app и подключите его к локальному или удаленному server.",
+    "eyebrow": "Интерфейсы"
+  },
+  "/ru/docs/interact/mobile": {
+    "title": "Мобильный доступ",
+    "description": "Открывайте Goalrail sessions с телефона, отвечайте на approvals и проверяйте прогресс.",
+    "eyebrow": "Интерфейсы"
+  },
+  "/ru/docs/interact/terminal": {
+    "title": "Терминал",
+    "description": "Запускайте и управляйте Goalrail sessions из командной строки.",
+    "eyebrow": "Интерфейсы"
+  },
+  "/ru/docs/interact/web-ui": {
+    "title": "Веб-интерфейс",
+    "description": "Web UI Goalrail показывает live session, files, agents, shells, todos, comments и multimodal input.",
+    "eyebrow": "Интерфейсы"
+  },
+  "/ru/docs/omnibox": {
+    "title": "Omnibox",
+    "description": "Omnibox - OS-level sandbox Goalrail для filesystem, network, environment и credentials boundaries.",
+    "eyebrow": "Sandboxing"
+  },
+  "/ru/docs/policies/builtin": {
+    "title": "Встроенные политики",
+    "description": "Каталог встроенных policies Goalrail для safety, approvals и cost control.",
+    "eyebrow": "Policies"
+  },
+  "/ru/docs/policies/custom": {
+    "title": "Свои политики",
+    "description": "Пишите custom policies на Python и подключайте их к Goalrail server.",
+    "eyebrow": "Policies"
+  },
+  "/ru/docs/policies/os-sandbox": {
+    "title": "OS sandbox config",
+    "description": "Настройте Omnibox: filesystem, network, environment и credential boundaries для Goalrail agents.",
+    "eyebrow": "Policies"
+  },
+  "/ru/docs/policies/overview": {
+    "title": "Контекстные политики",
+    "description": "Policies управляют тем, что Goalrail agent может делать: allow, ask или deny в реальном времени.",
+    "eyebrow": "Policies"
+  },
+  "/ru/docs/use/builtin-agents/debby": {
+    "title": "Debby",
+    "description": "Debby - встроенный model debate workflow Goalrail для критики, сравнения и synthesis.",
+    "eyebrow": "Встроенные workflows"
+  },
+  "/ru/docs/use/builtin-agents": {
+    "title": "Встроенные многоагентные workflows",
+    "description": "Goalrail поставляется с готовыми workflows, которые комбинируют несколько AI-агентов в одной управляемой сессии.",
+    "eyebrow": "Сценарии"
+  },
+  "/ru/docs/use/builtin-agents/polly": {
+    "title": "Polly",
+    "description": "Polly - встроенный coding orchestrator Goalrail для fanout, parallel work и cross-review.",
+    "eyebrow": "Встроенные workflows"
+  },
+  "/ru/docs/use/coding-agents": {
+    "title": "Coding agents",
+    "description": "Запускайте Claude Code или Codex через Goalrail и получайте web UI, persistent sessions, collaboration, mobile access и policies.",
+    "eyebrow": "Сценарии"
+  },
+  "/ru/docs/use/custom-agents": {
+    "title": "Свои агенты",
+    "description": "Опишите своего агента в YAML и получите вокруг него Goalrail UI, policies, collaboration, tools и deployment.",
+    "eyebrow": "Сценарии"
+  },
+  "/ru/faq": {
+    "title": "FAQ",
+    "description": "Ответы на частые вопросы о Goalrail: что это такое, как работает и с чего начать.",
+    "eyebrow": "Помощь"
+  },
+  "/ru/quickstart/coding-agent": {
+    "title": "Туториал: coding agent",
+    "description": "Посмотрите, что Goalrail добавляет поверх Claude Code или Codex: web UI, mobile access, shared sessions, forks и policies.",
+    "eyebrow": "Quickstart"
+  },
+  "/ru/quickstart/collaborate": {
+    "title": "Туториал: совместная работа",
+    "description": "Разверните общий сервер Goalrail, подключите laptop и phone, делитесь live sessions и запускайте cloud sandbox hosts.",
+    "eyebrow": "Quickstart"
+  },
+  "/ru/quickstart/install": {
+    "title": "Установка",
+    "description": "Установите Goalrail CLI одной командой через installer script, uv, pip или Homebrew и скачайте приложение для macOS.",
+    "eyebrow": "Quickstart"
+  },
+  "/ru/quickstart/policies": {
+    "title": "Туториал: контекстные политики",
+    "description": "Добавьте context-aware policies к live session: предупреждения по расходам, approval prompts и блокировки рискованных действий.",
+    "eyebrow": "Quickstart"
+  },
+  "/ru/quickstart/polly": {
+    "title": "Туториал: многоагентная coding orchestration",
+    "description": "Посмотрите Polly в работе: агент разбивает coding task на подзадачи, распределяет их между AI-агентами и собирает review.",
+    "eyebrow": "Quickstart"
+  }
+}

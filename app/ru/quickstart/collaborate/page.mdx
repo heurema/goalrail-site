@@ -1,0 +1,75 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Туториал: совместная работа",
+  "Разверните общий сервер Goalrail, подключите laptop и phone, делитесь live sessions и запускайте cloud sandbox hosts.",
+  {
+    eyebrow: "Quickstart",
+    path: "/ru/quickstart/collaborate",
+  },
+);
+
+# Туториал: совместная работа
+
+До этого все работало на вашей машине. В этом сценарии вы разворачиваете
+server, чтобы открывать сессии с телефона, делиться ими с коллегами и запускать
+агентов на cloud sandbox hosts, которые продолжают работать после закрытия
+laptop.
+
+**Время:** около 15 минут. **Нужен аккаунт Railway.**
+
+## 1. Разверните server на Railway
+
+Railway - быстрый способ получить multi-user Goalrail server.
+
+1. Откройте [railway.app](https://railway.app) и импортируйте
+   [Goalrail repo](https://github.com/heurema/goalrail) из GitHub.
+2. Railway найдет Dockerfile и развернет приложение вместе с managed Postgres.
+3. Сохраните server URL, например `https://goalrail-production-xxxx.up.railway.app`.
+
+## 2. Подключите laptop
+
+```
+goalrail login https://your-server.up.railway.app
+goalrail host https://your-server.up.railway.app
+```
+
+`login` авторизует CLI. `host` регистрирует вашу машину как runner, куда server
+может отправлять agent work. После этого сессии запускаются через общий server,
+но исполняются на зарегистрированном host.
+
+## 3. Откройте с телефона
+
+Откройте тот же URL на телефоне. Вы увидите web UI и те же сессии: можно
+запустить задачу на laptop, проверить прогресс с телефона и ответить на
+approval prompt.
+
+## 4. Поделитесь сессией
+
+В web UI нажмите **Share** в любой сессии и отправьте ссылку коллеге. Он сможет
+смотреть live output, писать в чат, оставлять comments или сделать fork для
+другого направления.
+
+<div className="note">
+
+**EDIT-доступ давайте только людям, которым доверяете запуск кода на host.**
+Пользователь с EDIT может управлять агентом, а агент выполняет команды там, где
+зарегистрирован runner. Если достаточно наблюдения, используйте read-only share.
+Подробнее: [risk of co-driving](/ru/docs/collaborate#code-execution-risk).
+
+</div>
+
+## 5. Запустите cloud sandbox host
+
+Если агент должен продолжать работу без вашего laptop, настройте cloud sandbox
+host. Тогда runner будет стартовать в удаленном container, а вы сможете
+проверить результат позже.
+
+Для настройки добавьте `sandbox` в server config. Полный разбор:
+[Cloud Sandbox Host](/ru/docs/deploy/cloud-sandbox-host).
+
+## Дальше
+
+- [Настройте SSO](/ru/docs/collaborate/auth) через Google, GitHub или Okta.
+- [Посмотрите другие варианты deploy](/ru/docs/deploy/overview): Docker, Render, Fly.io.
+- [Создайте своего агента](/ru/docs/use/custom-agents), которого сможет запускать вся команда.

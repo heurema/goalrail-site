@@ -1,0 +1,50 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Встроенные политики",
+  "Каталог встроенных policies Goalrail для safety, approvals и cost control.",
+  {
+    eyebrow: "Policies",
+    path: "/ru/docs/policies/builtin",
+  },
+);
+
+# Встроенные политики
+
+Goalrail поставляется с набором policies, которые покрывают типовые guardrails.
+Их можно включить в session, agent YAML или server config.
+
+Все built-in policies живут под `goalrail.policies.builtins`.
+
+## Safety
+
+- approval перед shell commands;
+- approval перед file operations;
+- ограничения на network или filesystem access;
+- проверки PII и secrets перед model request.
+
+## Cost control
+
+- soft thresholds с approval prompt;
+- hard caps для expensive models;
+- daily user budget;
+- model routing для простых задач.
+
+## Как добавить
+
+Через chat:
+
+```
+Ask me before running shell commands.
+```
+
+Через YAML:
+
+```
+policies:
+  shell_approval:
+    type: function
+    handler: goalrail.policies.builtins.safety.ask_on_os_tools
+```
+
+Для своих правил см. [свои политики](/ru/docs/policies/custom).

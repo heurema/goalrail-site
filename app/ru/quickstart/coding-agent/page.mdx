@@ -1,0 +1,109 @@
+import { pageMeta } from "@/lib/og";
+import ContentTabs from "@/components/ContentTabs";
+
+export const metadata = pageMeta(
+  "Туториал: coding agent",
+  "Посмотрите, что Goalrail добавляет поверх Claude Code или Codex: web UI, mobile access, shared sessions, forks и policies.",
+  {
+    eyebrow: "Quickstart",
+    path: "/ru/quickstart/coding-agent",
+  },
+);
+
+# Туториал: coding agent
+
+Если вы уже используете Claude Code или Codex, Goalrail добавляет поверх них
+общий UI, историю сессий, inline comments, mobile access, forks и политики. Сам
+агент остается привычным, но сессия становится переносимой и управляемой.
+
+**Время:** около 5 минут. **Все запускается локально.**
+
+## 1. Запустите агента
+
+```
+goalrail claude    # Claude Code
+goalrail codex     # Codex
+```
+
+Выберите тот агент, которым уже пользуетесь. Команда запускает terminal session
+и открывает web UI на `http://localhost:6767`. Терминал, браузер и desktop app
+смотрят на одну и ту же live session.
+
+## 2. Дайте задачу
+
+Например:
+
+```
+Write a Python function that reads a CSV file and returns the top 5 rows sorted by the second column.
+```
+
+Наблюдайте за ходом работы в терминале, затем откройте web UI или desktop app.
+Сообщение, отправленное в одном интерфейсе, сразу появляется в остальных.
+
+<ContentTabs labels={["Web UI", "Desktop app"]}>
+  <div>
+
+В браузере откройте `http://localhost:6767`. Слева будет диалог, справа -
+панели **Files**, **Agents**, **Shells** и **Todos**.
+
+![Goalrail web UI running a coding agent session](/images/docs/goalrail-web-session.svg)
+
+  </div>
+  <div>
+
+Запустите [desktop app](/ru/docs/interact/desktop) и подключите его к
+`http://localhost:6767`. Вы увидите ту же сессию, плюс получите OS
+notifications и badge, когда агент завершит работу или попросит input.
+
+![Goalrail desktop app showing an agent conversation alongside the session workspace](/images/docs/goalrail-desktop-session.svg)
+
+  </div>
+</ContentTabs>
+
+## 3. Попробуйте функции Goalrail
+
+### Inline comments
+
+Кликните по фрагменту ответа агента и оставьте комментарий вроде "сделай
+короче" или "используй pandas". Агент получит точную привязку к месту, а не
+только текстовое описание в чате.
+
+![Addressing an inline comment on agent output](/images/docs/goalrail-inline-comment.svg)
+
+### File editor
+
+Откройте файл, который создал агент, и поправьте его прямо в UI. Агент увидит
+ваши изменения и сможет продолжить работу с актуальным состоянием.
+
+![Editing a file in the Goalrail web UI](/images/docs/goalrail-file-editor.svg)
+
+### Images
+
+Перетащите screenshot, mockup или diagram в чат. Агент увидит изображение
+вместе с вашим текстом.
+
+### Fork and switch agents
+
+Сделайте fork сессии, чтобы попробовать другой подход без изменения исходной
+ветки разговора. Fork копирует историю до текущего момента. Сессию можно
+продолжить другим агентом: начали в Claude Code, сделали fork и передали его
+Codex, или наоборот.
+
+## 4. Добавьте policy обычным языком
+
+Напишите в чат:
+
+```
+Don't send any PII like emails or credit card numbers to the model. Ask me first if a message contains some.
+```
+
+Goalrail привяжет встроенную PII policy к текущей сессии. После этого исходящие
+model requests будут проверяться до отправки. Так же работают лимиты расходов,
+approval gates и ограничения доступа. Подробнее:
+[Контекстные политики](/ru/docs/policies/overview).
+
+## Дальше
+
+- [Запустите Polly](/ru/quickstart/polly), чтобы увидеть многоагентную coding orchestration.
+- [Настройте совместную работу](/ru/quickstart/collaborate), если нужен общий сервер.
+- [Создайте своего агента](/ru/docs/use/custom-agents) с собственными tools, prompts и policies.

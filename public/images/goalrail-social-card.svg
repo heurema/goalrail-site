@@ -1,0 +1,11 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#17151D"/>
+  <rect x="72" y="72" width="1056" height="486" rx="44" fill="#211E29" stroke="#5E6678" stroke-width="2"/>
+  <rect x="112" y="112" width="128" height="128" rx="34" fill="#17151D" stroke="#5E6678" stroke-width="4"/>
+  <path d="M145 154H179C199.435 154 216 170.565 216 191C216 211.435 199.435 228 179 228H153" stroke="#F4F2F7" stroke-width="13" stroke-linecap="round"/>
+  <path d="M151 191H188" stroke="#F4F2F7" stroke-width="13" stroke-linecap="round"/>
+  <path d="M176 164L203 191L176 218" stroke="#92D3B5" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="112" y="348" fill="#F4F2F7" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="760">Goalrail</text>
+  <text x="116" y="426" fill="#B9B3C5" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="450">Open layer for agent sessions, policies, and collaboration.</text>
+  <text x="116" y="498" fill="#92D3B5" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="650">goalrail.dev</text>
+</svg>

@@ -1,0 +1,37 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Polly",
+  "Polly - встроенный coding orchestrator Goalrail для fanout, parallel work и cross-review.",
+  {
+    eyebrow: "Встроенные workflows",
+    path: "/ru/docs/use/builtin-agents/polly",
+  },
+);
+
+# Polly
+
+Polly - многоагентный coding orchestrator. Он принимает задачу, выделяет
+подзадачи, запускает sub-agents и собирает результат через review.
+
+```
+goalrail polly
+goalrail          # тоже запускает Polly как default workflow
+```
+
+## Когда использовать
+
+- Большая coding task делится на независимые части.
+- Нужен cross-review между агентами или моделями.
+- Нужно сравнить несколько подходов без ручной координации worktrees.
+
+## Как устроено
+
+Polly использует skills вроде `/fanout`, `/cross-review` и `/investigate`.
+Каждый sub-agent получает свой контекст и может работать в отдельном worktree.
+В UI вы видите orchestrator, sub-agents, shells, todos и созданные файлы.
+
+## Дальше
+
+- [Quickstart Polly](/ru/quickstart/polly)
+- [Свои агенты](/ru/docs/use/custom-agents)

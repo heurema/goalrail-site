@@ -1,0 +1,33 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Встроенные многоагентные workflows",
+  "Goalrail поставляется с готовыми workflows, которые комбинируют несколько AI-агентов в одной управляемой сессии.",
+  {
+    eyebrow: "Сценарии",
+    path: "/ru/docs/use/builtin-agents",
+  },
+);
+
+# Встроенные многоагентные workflows
+
+Goalrail включает готовые multi-agent workflows. Они показывают, как
+координировать несколько агентов, использовать общий session history и
+проверять результаты через policies и review.
+
+## [Polly](/ru/docs/use/builtin-agents/polly)
+
+Coding orchestrator: разбивает задачу на подзадачи, распределяет работу между
+агентами и запускает cross-review. Подходит для задач, где полезны параллельная
+реализация, проверка и сравнение подходов.
+
+## [Debby](/ru/docs/use/builtin-agents/debby)
+
+Model debate workflow: отправляет вопрос нескольким моделям, заставляет их
+критиковать позиции друг друга и собирает итог. Удобно для архитектурных
+решений, анализа tradeoffs и проверки слабых мест.
+
+## Свои workflows
+
+Встроенные workflows не особенные: их можно повторить в YAML и расширить своими
+tools, prompts и policies. См. [Свои агенты](/ru/docs/use/custom-agents).

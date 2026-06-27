@@ -1,0 +1,13 @@
+/node_modules
+/.next
+/out
+/build
+/public/pagefind
+.DS_Store
+*.pem
+.env*.local
+.vercel
+next-env.d.ts
+.venv-tools/
+.tmp_pylibs/
+package-lock.json

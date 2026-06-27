@@ -1,0 +1,66 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Общий сервер",
+  "Разверните Goalrail server, чтобы sessions были доступны с телефона, для команды и через cloud sandbox hosts.",
+  {
+    eyebrow: "Deploy",
+    path: "/ru/docs/deploy/overview",
+  },
+);
+
+# Общий сервер
+
+Локальный запуск хорош для старта, но общий server нужен, когда вы хотите
+открывать sessions с телефона, делиться ими с командой или запускать runners в
+cloud containers.
+
+## Компоненты
+
+Goalrail состоит из трех частей:
+
+- **Server** хранит sessions, accounts, artifacts и policies.
+- **Runner/host** выполняет agent loops.
+- **UI** подключается к server: terminal, web, desktop, mobile и REST API.
+
+![Goalrail architecture](/images/architecture.svg)
+
+## Docker Compose
+
+Минимальный self-hosted вариант:
+
+```
+docker compose up -d
+```
+
+Обычно рядом нужен Postgres. См. [База данных](/ru/docs/deploy/database).
+
+## Cloud platforms
+
+Render, Railway и Fly.io подходят для быстрого deploy. На production проверьте:
+
+- persistent database;
+- HTTPS и auth;
+- healthchecks с запасом на migrations;
+- host/runner capacity;
+- backup policy.
+
+## Подключение host
+
+```
+goalrail login <server-url>
+goalrail host <server-url>
+```
+
+После этого server может отправлять agent work на зарегистрированный host.
+
+## Cloud sandbox hosts
+
+Если runner должен жить в remote container, настройте
+[Cloud Sandbox Host](/ru/docs/deploy/cloud-sandbox-host). Это снимает
+зависимость от laptop и дает воспроизводимое окружение.
+
+## Collaboration
+
+Когда server доступен команде, Goalrail становится multi-user: можно делиться
+live sessions, co-drive и делать forks. См. [Совместная работа](/ru/docs/collaborate).

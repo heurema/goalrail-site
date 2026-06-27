@@ -1,0 +1,42 @@
+<svg width="1132" height="728" viewBox="0 0 1132 728" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1132" height="728" rx="18" fill="#F7F5FA"/>
+  <rect x="16" y="16" width="1100" height="696" rx="18" fill="#FFFFFF" stroke="#E4DFEA" stroke-width="2"/>
+  <rect x="16" y="16" width="1100" height="56" rx="18" fill="#17151D"/>
+  <circle cx="48" cy="44" r="7" fill="#FF6B6B"/>
+  <circle cx="72" cy="44" r="7" fill="#FFD166"/>
+  <circle cx="96" cy="44" r="7" fill="#5DD39E"/>
+  <text x="133" y="51" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#F4F2F7">Goalrail</text>
+  <text x="1014" y="51" text-anchor="end" font-family="Inter, Arial, sans-serif" font-size="14" fill="#A8A4B4">goalrail.dev/session</text>
+  <rect x="38" y="94" width="238" height="596" rx="16" fill="#211E31"/>
+  <text x="62" y="134" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" fill="#F4F2F7">Sessions</text>
+  <rect x="58" y="158" width="198" height="46" rx="12" fill="#3A334D"/>
+  <text x="78" y="187" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Release review</text>
+  <rect x="58" y="220" width="198" height="44" rx="12" fill="#2B273A"/>
+  <text x="78" y="248" font-family="Inter, Arial, sans-serif" font-size="14" fill="#CAC5D7">Repair installer</text>
+  <rect x="58" y="280" width="198" height="44" rx="12" fill="#2B273A"/>
+  <text x="78" y="308" font-family="Inter, Arial, sans-serif" font-size="14" fill="#CAC5D7">Draft launch note</text>
+  <rect x="304" y="94" width="508" height="596" rx="16" fill="#FCFBFE" stroke="#E4DFEA"/>
+  <text x="336" y="139" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="750" fill="#17151D">Coding agent session</text>
+  <rect x="336" y="174" width="316" height="62" rx="18" fill="#EFEAF5"/>
+  <text x="358" y="212" font-family="Inter, Arial, sans-serif" font-size="16" fill="#332D40">Review the release branch and list risks.</text>
+  <rect x="430" y="268" width="330" height="98" rx="18" fill="#17151D"/>
+  <text x="456" y="305" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#92D3B5">Goalrail policy</text>
+  <text x="456" y="334" font-family="Inter, Arial, sans-serif" font-size="16" fill="#F4F2F7">Network access needs approval.</text>
+  <rect x="336" y="400" width="398" height="86" rx="18" fill="#F5F2F8" stroke="#E4DFEA"/>
+  <text x="362" y="433" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#17151D">Agent output</text>
+  <text x="362" y="463" font-family="Inter, Arial, sans-serif" font-size="16" fill="#332D40">Found 3 issues and wrote focused tests.</text>
+  <rect x="336" y="576" width="426" height="74" rx="18" fill="#FFFFFF" stroke="#DDD6E5" stroke-width="2"/>
+  <text x="362" y="620" font-family="Inter, Arial, sans-serif" font-size="16" fill="#7D7689">Ask the agent anything...</text>
+  <circle cx="722" cy="613" r="18" fill="#92D3B5"/>
+  <path d="M715 613H729M729 613L723 607M729 613L723 619" stroke="#17151D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="840" y="94" width="254" height="596" rx="16" fill="#FFFFFF" stroke="#E4DFEA"/>
+  <text x="868" y="139" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="750" fill="#17151D">Files</text>
+  <rect x="868" y="164" width="198" height="38" rx="12" fill="#F5F2F8"/>
+  <text x="886" y="188" font-family="Inter, Arial, sans-serif" font-size="14" fill="#6E6678">Search changed files</text>
+  <text x="868" y="244" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#17151D">src/agent.py</text>
+  <text x="868" y="286" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#17151D">tests/test_agent.py</text>
+  <text x="868" y="328" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#17151D">README.md</text>
+  <rect x="868" y="382" width="198" height="88" rx="14" fill="#F5F2F8"/>
+  <text x="888" y="415" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#17151D">Agents</text>
+  <text x="888" y="445" font-family="Inter, Arial, sans-serif" font-size="13" fill="#6E6678">reviewer active</text>
+</svg>

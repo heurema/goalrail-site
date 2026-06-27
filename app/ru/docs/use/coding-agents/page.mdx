@@ -1,0 +1,29 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Coding agents",
+  "Запускайте Claude Code или Codex через Goalrail и получайте web UI, persistent sessions, collaboration, mobile access и policies.",
+  {
+    eyebrow: "Сценарии",
+    path: "/ru/docs/use/coding-agents",
+  },
+);
+
+# Coding agents
+
+Goalrail запускает Claude Code или Codex одной командой. YAML не нужен: вы
+используете привычный coding agent, а Goalrail добавляет общий слой вокруг
+сессии.
+
+```
+goalrail claude    # Claude Code
+goalrail codex     # Codex
+```
+
+Вы получаете web UI, persistent history, mobile access, shared sessions и
+[контекстные политики](/ru/docs/policies/overview). Под капотом каждый coding
+agent работает как **harness** - runtime, который выполняет agent loop. Goalrail
+оборачивает harness в единый протокол сессии.
+
+**[Пройдите quickstart для coding agent](/ru/quickstart/coding-agent)**, чтобы
+запустить первый пример за несколько минут.

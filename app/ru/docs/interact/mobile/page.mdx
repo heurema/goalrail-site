@@ -1,0 +1,29 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Мобильный доступ",
+  "Открывайте Goalrail sessions с телефона, отвечайте на approvals и проверяйте прогресс.",
+  {
+    eyebrow: "Интерфейсы",
+    path: "/ru/docs/interact/mobile",
+  },
+);
+
+# Мобильный доступ
+
+Goalrail web UI адаптирован для телефона. Если server доступен извне, вы можете
+проверять progress, читать output и отвечать на approval prompts без laptop.
+
+## Когда полезно
+
+- Агент работает долго, а вам нужно уйти от компьютера.
+- Нужно быстро подтвердить безопасное действие.
+- Команда делится live session по ссылке.
+
+## Как подключить
+
+1. Разверните или запустите server, доступный с телефона.
+2. Откройте server URL в мобильном браузере.
+3. Войдите, если включена auth.
+
+Варианты deploy описаны в [deployment docs](/ru/docs/deploy/overview).

@@ -1,0 +1,21 @@
+<svg width="1280" height="820" viewBox="0 0 1280 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="820" rx="32" fill="#111018"/>
+  <rect x="124" y="84" width="1032" height="652" rx="28" fill="#1B1825" stroke="#464050" stroke-width="2"/>
+  <rect x="124" y="84" width="1032" height="58" rx="28" fill="#24202F"/>
+  <circle cx="162" cy="113" r="8" fill="#FF6B6B"/>
+  <circle cx="190" cy="113" r="8" fill="#FFD166"/>
+  <circle cx="218" cy="113" r="8" fill="#5DD39E"/>
+  <text x="640" y="120" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" fill="#F4F2F7">Goalrail</text>
+  <rect x="468" y="228" width="344" height="344" rx="28" fill="#211E31" stroke="#494254" stroke-width="2"/>
+  <rect x="584" y="272" width="112" height="112" rx="30" fill="#17151D" stroke="#5E6678" stroke-width="4"/>
+  <path d="M613 313H648C668 313 684 329 684 349C684 369 668 385 648 385H625" stroke="#F4F2F7" stroke-width="12" stroke-linecap="round"/>
+  <path d="M626 349H657" stroke="#F4F2F7" stroke-width="12" stroke-linecap="round"/>
+  <path d="M646 321L674 349L646 377" stroke="#92D3B5" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="640" y="432" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="780" fill="#F4F2F7">Connect to Goalrail</text>
+  <text x="640" y="466" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#A8A4B4">Enter your server URL</text>
+  <rect x="512" y="498" width="256" height="48" rx="14" fill="#17151D" stroke="#5E6678"/>
+  <text x="536" y="528" font-family="Inter, Arial, sans-serif" font-size="15" fill="#F4F2F7">http://localhost:6767</text>
+  <rect x="584" y="570" width="112" height="42" rx="14" fill="#92D3B5"/>
+  <text x="640" y="597" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="760" fill="#17151D">Connect</text>
+  <text x="640" y="654" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" fill="#A8A4B4">Need a public server? Use https://goalrail.dev</text>
+</svg>

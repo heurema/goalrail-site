@@ -1,0 +1,83 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Свои агенты",
+  "Опишите своего агента в YAML и получите вокруг него Goalrail UI, policies, collaboration, tools и deployment.",
+  {
+    eyebrow: "Сценарии",
+    path: "/ru/docs/use/custom-agents",
+  },
+);
+
+# Свои агенты
+
+Goalrail позволяет описать агента коротким YAML-файлом: prompt, harness, model,
+tools, skills и policies. После этого агент получает тот же platform layer, что
+и встроенные workflows: web UI, persistent sessions, collaboration, sandboxing и
+deployment.
+
+## Минимальный пример
+
+```
+name: reviewer
+prompt: |
+  You are a careful code reviewer.
+executor:
+  type: goalrail
+  harness: claude-sdk
+  model: claude-sonnet-4-6
+```
+
+Запуск:
+
+```
+goalrail run ./agents/reviewer.yaml
+goalrail run ./agents/reviewer/   # директория с config.yaml
+```
+
+## Из чего состоит config
+
+### [Harnesses](/ru/docs/build/harnesses)
+
+Harness определяет runtime: Claude Code, Codex, OpenAI Agents SDK или другой
+исполнитель agent loop.
+
+### [Models & Credentials](/ru/docs/build/models)
+
+Model и auth описывают, какую модель использовать и откуда Goalrail берет
+доступ: API key, subscription CLI login или gateway.
+
+### [Prompts & Skills](/ru/docs/build/prompts)
+
+Prompt задает роль агента. Skills добавляют reusable инструкции, которые можно
+вызывать явно или включать в workflow.
+
+### [MCP & Tools](/ru/docs/build/tools)
+
+Tools дают агенту возможности: MCP servers, Python functions, sub-agents и
+унаследованные tools.
+
+### [Policies](/ru/docs/policies/overview)
+
+Policies ограничивают действия агента: approvals, budgets, access controls,
+PII checks и свои Python policies.
+
+## Пример с policy
+
+```
+name: safe-reviewer
+prompt: |
+  Review code changes and explain risks clearly.
+executor:
+  type: goalrail
+  harness: claude-sdk
+  model: claude-sonnet-4-6
+policies:
+  rate_limit:
+    type: function
+    handler: goalrail.policies.builtins.safety.max_tool_calls_per_session
+    factory_params:
+      limit: 40
+```
+
+Такой агент получает hard limit на количество tool calls в сессии.

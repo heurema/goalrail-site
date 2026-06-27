@@ -1,0 +1,77 @@
+# Goalrail
+
+> Open-source layer for building, governing, and collaborating on AI agent sessions.
+
+For expanded context, use [llms-full.txt](https://goalrail.dev/llms-full.txt).
+
+## English
+
+- [Goalrail](https://goalrail.dev/en): Product overview and architecture.
+- [Install Goalrail](https://goalrail.dev/en/quickstart/install): Requirements, installation, credentials, Debby, and the macOS app.
+- [Tutorial: Coding Agent](https://goalrail.dev/en/quickstart/coding-agent): Run Claude Code or Codex through Goalrail with web UI, comments, forks, and policies.
+- [Tutorial: Multi-Agent Coding](https://goalrail.dev/en/quickstart/polly): Run Polly, Goalrail's multi-agent coding orchestrator.
+- [Tutorial: Collaborate](https://goalrail.dev/en/quickstart/collaborate): Deploy a shared server, connect devices, share sessions, and run cloud sandbox hosts.
+- [Tutorial: Contextual Policies](https://goalrail.dev/en/quickstart/policies): Attach context-aware policies to live sessions.
+- [Coding Agents](https://goalrail.dev/en/docs/use/coding-agents): Use Goalrail with Claude Code, Codex, and shared agent sessions.
+- [Built-in Multi-Agent Workflows](https://goalrail.dev/en/docs/use/builtin-agents): Overview of Goalrail's built-in multi-agent workflows.
+- [Polly](https://goalrail.dev/en/docs/use/builtin-agents/polly): Coding orchestrator.
+- [Debby](https://goalrail.dev/en/docs/use/builtin-agents/debby): Model debate workflow.
+- [Custom Agents](https://goalrail.dev/en/docs/use/custom-agents): Create custom YAML agents with harnesses, models, prompts, skills, tools, and policies.
+- [Harnesses](https://goalrail.dev/en/docs/build/harnesses): Runtime harnesses for agent loops.
+- [Models & Credentials](https://goalrail.dev/en/docs/build/models): Declare models and configure API keys, subscriptions, and gateways.
+- [Prompts & Skills](https://goalrail.dev/en/docs/build/prompts): Shape agent behavior.
+- [MCP & Tools](https://goalrail.dev/en/docs/build/tools): Add MCP servers, functions, sub-agents, and inherited tools.
+- [Terminal](https://goalrail.dev/en/docs/interact/terminal): Start and manage sessions from CLI.
+- [Web UI](https://goalrail.dev/en/docs/interact/web-ui): Files, comments, diffs, multimodal input, and collaboration.
+- [Mobile](https://goalrail.dev/en/docs/interact/mobile): Use sessions from a phone.
+- [Desktop App](https://goalrail.dev/en/docs/interact/desktop): Install and use the native desktop app.
+- [Pair Programming](https://goalrail.dev/en/docs/collaborate): Share and fork live sessions.
+- [Auth & SSO](https://goalrail.dev/en/docs/collaborate/auth): Accounts, OIDC SSO, trusted headers, and migration.
+- [Shared Server](https://goalrail.dev/en/docs/deploy/overview): Deploy Goalrail server, runner, UI, and collaboration stack.
+- [Database](https://goalrail.dev/en/docs/deploy/database): Postgres, SQLite, and first boot behavior.
+- [Cloud Sandbox Host](https://goalrail.dev/en/docs/deploy/cloud-sandbox-host): Configure remote runner containers.
+- [Contextual Policies](https://goalrail.dev/en/docs/policies/overview): Policy concepts, levels, and configuration.
+- [Builtin Policies](https://goalrail.dev/en/docs/policies/builtin): Safety and cost-control policies.
+- [Custom Policies](https://goalrail.dev/en/docs/policies/custom): Write and register custom policy functions.
+- [OS Sandbox Config](https://goalrail.dev/en/docs/policies/os-sandbox): Filesystem, network, and environment restrictions.
+- [Omnibox](https://goalrail.dev/en/docs/omnibox): OS-level sandbox overview.
+- [FAQ](https://goalrail.dev/en/faq): Common questions.
+
+## Русский
+
+- [Goalrail](https://goalrail.dev/ru): Обзор продукта и архитектуры.
+- [Установка Goalrail](https://goalrail.dev/ru/quickstart/install): Требования, установка, credentials, Debby и приложение для macOS.
+- [Туториал: coding agent](https://goalrail.dev/ru/quickstart/coding-agent): Запуск Claude Code или Codex через Goalrail: web UI, comments, forks и policies.
+- [Туториал: несколько агентов](https://goalrail.dev/ru/quickstart/polly): Запуск Polly, многоагентного coding orchestrator в Goalrail.
+- [Туториал: совместная работа](https://goalrail.dev/ru/quickstart/collaborate): Развертывание общего server, подключение устройств, shared sessions и cloud sandbox hosts.
+- [Туториал: политики](https://goalrail.dev/ru/quickstart/policies): Подключение context-aware policies к live sessions.
+- [Coding agents](https://goalrail.dev/ru/docs/use/coding-agents): Goalrail поверх Claude Code, Codex и shared agent sessions.
+- [Встроенные workflows](https://goalrail.dev/ru/docs/use/builtin-agents): Обзор встроенных multi-agent workflows в Goalrail.
+- [Polly](https://goalrail.dev/ru/docs/use/builtin-agents/polly): Coding orchestrator.
+- [Debby](https://goalrail.dev/ru/docs/use/builtin-agents/debby): Model debate workflow.
+- [Свои агенты](https://goalrail.dev/ru/docs/use/custom-agents): Собственные YAML agents с harnesses, models, prompts, skills, tools и policies.
+- [Harnesses](https://goalrail.dev/ru/docs/build/harnesses): Runtime harnesses для agent loops.
+- [Модели и доступы](https://goalrail.dev/ru/docs/build/models): Модели, API keys, subscriptions и gateways.
+- [Промпты и skills](https://goalrail.dev/ru/docs/build/prompts): Настройка поведения агента.
+- [MCP и tools](https://goalrail.dev/ru/docs/build/tools): MCP servers, functions, sub-agents и inherited tools.
+- [Терминал](https://goalrail.dev/ru/docs/interact/terminal): Запуск и управление sessions из CLI.
+- [Веб-интерфейс](https://goalrail.dev/ru/docs/interact/web-ui): Файлы, comments, diffs, multimodal input и совместная работа.
+- [Мобильный доступ](https://goalrail.dev/ru/docs/interact/mobile): Работа с sessions с телефона.
+- [Desktop app](https://goalrail.dev/ru/docs/interact/desktop): Установка и подключение native desktop app.
+- [Совместная работа](https://goalrail.dev/ru/docs/collaborate): Публикация ссылок и forks для live sessions.
+- [Auth и SSO](https://goalrail.dev/ru/docs/collaborate/auth): Accounts, OIDC SSO, trusted headers и migration.
+- [Общий сервер](https://goalrail.dev/ru/docs/deploy/overview): Развертывание Goalrail server, runner, UI и collaboration stack.
+- [База данных](https://goalrail.dev/ru/docs/deploy/database): Postgres, SQLite и first boot behavior.
+- [Cloud sandbox host](https://goalrail.dev/ru/docs/deploy/cloud-sandbox-host): Настройка remote runner containers.
+- [Контекстные политики](https://goalrail.dev/ru/docs/policies/overview): Понятия, уровни и configuration для policies.
+- [Встроенные политики](https://goalrail.dev/ru/docs/policies/builtin): Safety и cost-control policies.
+- [Свои политики](https://goalrail.dev/ru/docs/policies/custom): Собственные policy functions на Python.
+- [OS sandbox config](https://goalrail.dev/ru/docs/policies/os-sandbox): Filesystem, network и environment restrictions.
+- [Omnibox](https://goalrail.dev/ru/docs/omnibox): OS-level sandbox overview.
+- [FAQ](https://goalrail.dev/ru/faq): Частые вопросы.
+
+## Project
+
+- [GitHub repository](https://github.com/heurema/goalrail): Product source code.
+- [Telegram](https://t.me/goalrail): Project updates and feedback.
+- [Sitemap](https://goalrail.dev/sitemap.xml): Full public route index.

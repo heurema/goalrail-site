@@ -1,0 +1,88 @@
+import { pageMeta } from "@/lib/og";
+import GatewayLogos from "@/components/GatewayLogos";
+import ProviderKeyTable from "@/components/ProviderKeyTable";
+
+export const metadata = pageMeta(
+  "Модели и доступы",
+  "Опишите model в YAML, а Goalrail поможет настроить credentials: API keys, subscriptions или gateways.",
+  {
+    eyebrow: "Build",
+    path: "/ru/docs/build/models",
+  },
+);
+
+# Модели и доступы
+
+Каждому harness нужна model и credentials для доступа к провайдеру. Model
+задается в YAML, а credentials настраиваются через `goalrail setup`.
+
+## Выберите model
+
+```
+executor:
+  harness: claude-sdk
+  model: claude-sonnet-4-6
+```
+
+Можно переопределить model при запуске:
+
+```
+goalrail run agent.yaml --model claude-sonnet-4-6
+```
+
+Внутри running session можно использовать `/model`, чтобы переключить model без
+потери conversation history и tool state.
+
+## Credentials
+
+```
+goalrail setup
+```
+
+Setup wizard найдет environment variables, CLI logins и local model servers,
+после чего предложит подтвердить или добавить недостающие credentials.
+
+## Типы доступов
+
+| Type | Что это |
+| --- | --- |
+| **API key** | Ключ провайдера: Anthropic, OpenAI, OpenRouter и другие |
+| **Subscription** | Claude Pro/Max или ChatGPT Plus/Pro через официальные `claude` / `codex` CLI |
+| **Gateway** | Ваш proxy или local model endpoint с base URL и key |
+
+### API key
+
+Получите key в dashboard провайдера и добавьте его через `goalrail setup`.
+
+<ProviderKeyTable />
+
+### Subscription
+
+Если у вас есть Claude Pro/Max или ChatGPT Plus/Pro, Goalrail может использовать
+существующий CLI login:
+
+```
+claude auth login
+codex login
+```
+
+### Gateway
+
+Goalrail работает с OpenAI-compatible и Anthropic-compatible gateways:
+
+<GatewayLogos />
+
+`goalrail setup` попросит base URL и key.
+
+| Provider | Для чего | Base URL | Key |
+| --- | --- | --- | --- |
+| **OpenRouter** | Claude Code | `https://openrouter.ai/api` | OpenRouter key |
+| **OpenRouter** | Codex / OpenAI agents | `https://openrouter.ai/api/v1` | OpenRouter key |
+| **Ollama** | Codex / OpenAI agents | `http://localhost:11434/v1` | любое значение |
+
+<div className="note">
+
+Для Claude Code у OpenRouter используйте Anthropic-compatible endpoint
+`.../api`; для Codex и OpenAI Agents SDK - OpenAI-compatible `.../api/v1`.
+
+</div>

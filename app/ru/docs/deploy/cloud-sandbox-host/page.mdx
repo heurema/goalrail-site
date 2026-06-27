@@ -1,0 +1,55 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Cloud sandbox host",
+  "Перенесите Goalrail runner с laptop в isolated remote container.",
+  {
+    eyebrow: "Deploy",
+    path: "/ru/docs/deploy/cloud-sandbox-host",
+  },
+);
+
+# Cloud sandbox host
+
+Cloud sandbox host переносит runner из локальной машины в remote container.
+Agent work продолжает выполняться, даже если laptop выключен, а окружение
+изолировано от ваших локальных файлов и credentials.
+
+Это отличается от [Omnibox](/ru/docs/omnibox): cloud sandbox отвечает за
+**где** выполняется runner, а Omnibox - **к чему** он имеет доступ.
+
+## Провайдеры
+
+Goalrail поддерживает server-managed и CLI-managed sandbox hosts. Конкретный
+provider настраивается в server config.
+
+```
+sandbox:
+  provider: modal
+  image: ghcr.io/heurema/goalrail-host:latest
+  secrets: [goalrail-llm]
+```
+
+Для своего image укажите другой registry:
+
+```
+sandbox:
+  provider: daytona
+  image: docker.io/you/goalrail-host:latest
+```
+
+## CLI
+
+```
+goalrail sandbox create --provider modal
+goalrail sandbox connect --provider modal
+```
+
+## Когда использовать
+
+- Нужно оставить агента работать после закрытия laptop.
+- Нужна изоляция от локального окружения.
+- Команде требуется predictable runner image.
+
+Сочетайте cloud sandbox host с [policies](/ru/docs/policies/overview), чтобы
+контролировать действия внутри runner.

@@ -1,0 +1,46 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Терминал",
+  "Запускайте и управляйте Goalrail sessions из командной строки.",
+  {
+    eyebrow: "Интерфейсы",
+    path: "/ru/docs/interact/terminal",
+  },
+);
+
+# Терминал
+
+CLI остается самым быстрым способом начать работу. Goalrail запускает агент,
+создает session и синхронизирует ее с web UI, desktop app и mobile UI.
+
+## Основные команды
+
+```
+goalrail claude
+goalrail codex
+goalrail polly
+goalrail debby
+goalrail run agent.yaml
+```
+
+`goalrail run` запускает custom agent из YAML config. См.
+[Свои агенты](/ru/docs/use/custom-agents).
+
+## Server и host
+
+```
+goalrail server start
+goalrail host <server-url>
+goalrail login <server-url>
+```
+
+`server start` поднимает локальный server. `host` регистрирует вашу машину как
+runner для общего server. `login` сохраняет credentials для защищенного server.
+
+## Синхронизация UI
+
+Terminal и web UI работают с одной session. Вы можете написать сообщение в
+терминале, открыть его в браузере, оставить inline comment и вернуться обратно.
+
+Для первого сценария см. [quickstart coding agent](/ru/quickstart/coding-agent).

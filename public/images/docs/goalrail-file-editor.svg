@@ -1,0 +1,25 @@
+<svg width="970" height="668" viewBox="0 0 970 668" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="970" height="668" rx="18" fill="#FFFFFF"/>
+  <rect x="18" y="18" width="934" height="632" rx="18" fill="#FCFBFE" stroke="#E4DFEA" stroke-width="2"/>
+  <rect x="18" y="18" width="934" height="54" rx="18" fill="#17151D"/>
+  <text x="48" y="52" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="760" fill="#F4F2F7">Goalrail editor</text>
+  <rect x="44" y="98" width="210" height="526" rx="14" fill="#F5F2F8"/>
+  <text x="68" y="136" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#17151D">Files</text>
+  <text x="68" y="188" font-family="Inter, Arial, sans-serif" font-size="14" fill="#332D40">docs/overview.md</text>
+  <text x="68" y="228" font-family="Inter, Arial, sans-serif" font-size="14" fill="#332D40">src/policies.py</text>
+  <text x="68" y="268" font-family="Inter, Arial, sans-serif" font-size="14" fill="#332D40">README.md</text>
+  <rect x="284" y="98" width="642" height="526" rx="14" fill="#FFFFFF" stroke="#E4DFEA"/>
+  <rect x="284" y="98" width="642" height="46" rx="14" fill="#F5F2F8"/>
+  <text x="310" y="128" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#17151D">README.md</text>
+  <text x="316" y="192" font-family="Menlo, Consolas, monospace" font-size="15" fill="#6E6678">1</text>
+  <text x="356" y="192" font-family="Menlo, Consolas, monospace" font-size="15" fill="#17151D"># Goalrail local workflow</text>
+  <text x="316" y="232" font-family="Menlo, Consolas, monospace" font-size="15" fill="#6E6678">2</text>
+  <text x="356" y="232" font-family="Menlo, Consolas, monospace" font-size="15" fill="#332D40">Run coding agents with shared sessions, files, and policies.</text>
+  <text x="316" y="272" font-family="Menlo, Consolas, monospace" font-size="15" fill="#6E6678">3</text>
+  <text x="356" y="272" font-family="Menlo, Consolas, monospace" font-size="15" fill="#332D40">Open http://localhost:6767 or connect the desktop app.</text>
+  <rect x="350" y="310" width="500" height="78" rx="12" fill="#F5F2F8"/>
+  <text x="374" y="342" font-family="Menlo, Consolas, monospace" font-size="15" fill="#17151D">goalrail claude</text>
+  <text x="374" y="370" font-family="Menlo, Consolas, monospace" font-size="15" fill="#17151D">goalrail codex</text>
+  <text x="316" y="438" font-family="Menlo, Consolas, monospace" font-size="15" fill="#6E6678">8</text>
+  <text x="356" y="438" font-family="Menlo, Consolas, monospace" font-size="15" fill="#332D40">Edits save directly into the workspace.</text>
+</svg>

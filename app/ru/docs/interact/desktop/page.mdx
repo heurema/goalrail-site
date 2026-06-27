@@ -1,0 +1,39 @@
+import { pageMeta } from "@/lib/og";
+import MacDownloadButton from "@/components/MacDownloadButton";
+
+export const metadata = pageMeta(
+  "Desktop app",
+  "Установите Goalrail desktop app и подключите его к локальному или удаленному server.",
+  {
+    eyebrow: "Интерфейсы",
+    path: "/ru/docs/interact/desktop",
+  },
+);
+
+# Desktop app
+
+Desktop app открывает тот же Goalrail UI в native window и добавляет OS-level
+удобства: notifications, dock badge и быстрое подключение к нескольким servers.
+
+<MacDownloadButton />
+
+## Требования
+
+- Установленный Goalrail CLI.
+- Running server: локальный `goalrail server start` или remote server.
+- Runner/host, который выполняет agent work.
+
+## Подключение
+
+1. Запустите server или agent command, например `goalrail debby`.
+2. Скопируйте server URL из терминала.
+3. Откройте desktop app и вставьте URL.
+
+По умолчанию локальный server использует `http://localhost:6767`. Если порт
+занят, Goalrail выберет следующий свободный порт.
+
+## Когда использовать
+
+Desktop app удобен для долгих задач: можно закрыть браузер, получать
+notifications и быстро вернуться к session, когда агент закончит или попросит
+input.

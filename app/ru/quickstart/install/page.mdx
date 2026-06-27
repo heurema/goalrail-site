@@ -1,0 +1,68 @@
+import { pageMeta } from "@/lib/og";
+import InstallCommandTabs from "@/components/InstallCommandTabs";
+import MacDownloadButton from "@/components/MacDownloadButton";
+
+export const metadata = pageMeta(
+  "Установка",
+  "Установите Goalrail CLI одной командой через installer script, uv, pip или Homebrew и скачайте приложение для macOS.",
+  {
+    eyebrow: "Quickstart",
+    path: "/ru/quickstart/install",
+  },
+);
+
+# Установка
+
+Goalrail можно поднять за несколько минут: установите CLI, проверьте доступы к
+моделям и запустите первого агента. После этого можно подключить native macOS
+app - это необязательный, но удобный UI поверх того же сервера.
+
+## Требования
+
+- **Python 3.12+**
+- **Node.js 22 LTS** и npm
+- **tmux**
+
+## Установите Goalrail
+
+<InstallCommandTabs />
+
+Эта же команда обновляет уже установленную версию.
+
+## Настройте доступы
+
+```
+goalrail setup
+```
+
+Мастер настройки найдет ключи и CLI-логины на вашей машине и попросит добавить
+то, чего не хватает. Полный список вариантов описан в разделе
+[Модели и доступы](/ru/docs/build/models#credentials).
+
+## Запустите Debby
+
+Для быстрой проверки запустите Debby - встроенного агента для model debate.
+
+```
+goalrail debby
+```
+
+Команда запустит web UI и напечатает URL сервера. Задайте любой вопрос, например
+`Что появилось раньше, курица или яйцо?`, и посмотрите, как модели спорят и
+собирают итог. Подробнее: [Debby](/ru/docs/use/builtin-agents/debby).
+
+## Добавьте приложение для macOS
+
+Desktop app дает тот же UI, историю сессий и подключение к локальному или
+удаленному серверу. Терминальная установка выше уже достаточна; приложение
+нужно только если вам удобнее native-интерфейс.
+
+<MacDownloadButton />
+
+Откройте скачанное приложение и вставьте server URL. Команда `goalrail debby`
+печатает его при запуске web UI. По умолчанию это `http://localhost:6767`; если
+порт занят, Goalrail выберет следующий свободный, например
+`http://localhost:6768`.
+
+Когда приложение подключится, выберите **Debby** в agent picker и задайте первый
+вопрос. Для удаленного сервера см. [Общий сервер](/ru/docs/deploy/overview).

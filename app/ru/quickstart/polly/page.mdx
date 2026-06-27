@@ -1,0 +1,96 @@
+import { pageMeta } from "@/lib/og";
+import ContentTabs from "@/components/ContentTabs";
+
+export const metadata = pageMeta(
+  "Туториал: многоагентная coding orchestration",
+  "Посмотрите Polly в работе: агент разбивает coding task на подзадачи, распределяет их между AI-агентами и собирает review.",
+  {
+    eyebrow: "Quickstart",
+    path: "/ru/quickstart/polly",
+  },
+);
+
+# Туториал: многоагентная coding orchestration
+
+Polly - встроенный orchestrator для coding tasks. Он разбивает задачу на
+подзадачи, запускает несколько AI-агентов параллельно и добавляет review между
+ними. Этот quickstart показывает, как это выглядит в UI.
+
+**Время:** около 5 минут. **Все запускается локально.**
+
+## 1. Запустите Polly
+
+```
+goalrail polly
+```
+
+Команда откроет web UI на `http://localhost:6767`. Если выполнить просто
+`goalrail`, Polly тоже стартует как default workflow.
+
+<figure>
+  {/* eslint-disable-next-line @next/next/no-img-element */}
+  <img
+    src="/images/docs/goalrail-polly.svg"
+    alt="Running goalrail from the terminal launches Polly"
+    style={{ width: "100%", borderRadius: "8px" }}
+  />
+  <figcaption>
+    Polly можно запустить через <code>goalrail polly</code> или коротко через{" "}
+    <code>goalrail</code>.
+  </figcaption>
+</figure>
+
+## 2. Дайте задачу
+
+```
+Refactor the authentication module into separate files for OAuth, JWT, and session handling. Add tests for each.
+```
+
+Polly разложит задачу на части, запустит sub-agents и будет координировать
+результат. Один агент может писать код, другой - тесты, третий - review.
+
+## 3. Следите в UI
+
+<ContentTabs labels={["Web UI", "Desktop app"]}>
+  <div>
+
+Откройте `http://localhost:6767`. Вы увидите ту же live session, что и в
+терминале.
+
+  </div>
+  <div>
+
+Запустите [desktop app](/ru/docs/interact/desktop) и подключите его к
+`http://localhost:6767`. Это тот же workflow, но с native notifications и dock
+badge.
+
+  </div>
+</ContentTabs>
+
+Правая панель содержит вкладки **Files**, **Agents**, **Shells** и **Todos**.
+Во вкладке **Agents** видно каждого sub-agent и его статус.
+
+- Откройте sub-agent, чтобы посмотреть его диалог, файлы и terminal output.
+- Перейдите в **Shells**, чтобы увидеть запущенные процессы.
+- Напишите Polly или конкретному sub-agent, если хотите изменить ход работы.
+
+<figure>
+  {/* eslint-disable-next-line @next/next/no-img-element */}
+  <img
+    src="/images/docs/goalrail-polly.svg"
+    alt="Switching from Polly to sub-agents in the Agents panel"
+    style={{ width: "100%", borderRadius: "8px" }}
+  />
+  <figcaption>
+    Agents panel показывает orchestrator и sub-agents, поэтому можно проверять и
+    направлять каждого исполнителя отдельно.
+  </figcaption>
+</figure>
+
+Подробнее о skills вроде `/fanout`, `/cross-review` и `/investigate` см. в
+[справке Polly](/ru/docs/use/builtin-agents/polly).
+
+## Дальше
+
+- [Настройте совместную работу](/ru/quickstart/collaborate), если нужно делиться live sessions.
+- [Создайте своего агента](/ru/docs/use/custom-agents), если хотите описать собственный workflow в YAML.

@@ -1,0 +1,27 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="720" rx="32" fill="#FBF9FC"/>
+  <rect x="58" y="56" width="768" height="606" rx="30" fill="#FFFFFF" stroke="#E7E1EA" stroke-width="2"/>
+  <text x="102" y="122" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="760" fill="#15131A">Shared live session</text>
+  <text x="102" y="160" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#5C5765">Invite teammates into the same history, comments, and agent control surface.</text>
+  <rect x="102" y="218" width="640" height="88" rx="22" fill="#F6F3F7"/>
+  <text x="132" y="253" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#5C5765">Comment</text>
+  <text x="132" y="281" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="650" fill="#15131A">Please verify the installer branch before release.</text>
+  <rect x="102" y="336" width="640" height="130" rx="24" fill="#17151D"/>
+  <text x="132" y="378" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#B7B1C5">Agent reply</text>
+  <text x="132" y="416" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="720" fill="#FFFFFF">Checks are running in a clean worktree.</text>
+  <text x="132" y="448" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#B7B1C5">I will attach the failure output if the build breaks.</text>
+  <rect x="102" y="504" width="305" height="78" rx="20" fill="#FFF0F8"/>
+  <text x="132" y="552" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="650" fill="#15131A">Desktop connected</text>
+  <rect x="437" y="504" width="305" height="78" rx="20" fill="#EFFAF5"/>
+  <text x="467" y="552" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="650" fill="#15131A">Mobile following</text>
+  <rect x="872" y="104" width="274" height="512" rx="34" fill="#17151D" stroke="#474B58" stroke-width="3"/>
+  <rect x="894" y="136" width="230" height="448" rx="24" fill="#211E31"/>
+  <text x="926" y="190" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="760" fill="#F4F2F7">Goalrail</text>
+  <rect x="926" y="232" width="166" height="54" rx="15" fill="#3A334D"/>
+  <text x="948" y="265" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#FFFFFF">Review branch</text>
+  <rect x="926" y="314" width="166" height="88" rx="18" fill="#2A2738"/>
+  <text x="948" y="350" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#B7B1C5">New update</text>
+  <text x="948" y="378" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="650" fill="#F4F2F7">Tests passed</text>
+  <rect x="926" y="444" width="166" height="52" rx="18" fill="#92D3B5"/>
+  <text x="1009" y="477" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="720" fill="#15131A">Open session</text>
+</svg>

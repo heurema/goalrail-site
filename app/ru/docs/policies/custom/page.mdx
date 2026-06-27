@@ -1,0 +1,56 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Свои политики",
+  "Пишите custom policies на Python и подключайте их к Goalrail server.",
+  {
+    eyebrow: "Policies",
+    path: "/ru/docs/policies/custom",
+  },
+);
+
+# Свои политики
+
+Когда built-in policies недостаточно, можно написать Python function policy и
+зарегистрировать ее на server.
+
+## Policy function
+
+```
+from goalrail.policies.schema import PolicyEvent, PolicyResponse
+
+
+def block_large_files(event: PolicyEvent) -> PolicyResponse | None:
+    if event.tool_name != "write_file":
+        return None
+    size = event.arguments.get("size", 0)
+    if size > 1_000_000:
+        return PolicyResponse.deny("File is too large")
+    return None
+```
+
+`None` означает "no opinion" - Goalrail переходит к следующей policy.
+
+## Registration
+
+Добавьте module в server config:
+
+```
+policy_modules:
+  - myorg.policies
+```
+
+Запустите server с этим config:
+
+```
+goalrail server -c config.yaml
+```
+
+После этого policy можно выбрать в UI, добавить через chat или объявить в YAML.
+
+## Практика
+
+- Делайте policy small and deterministic.
+- Возвращайте `ASK`, когда решение должен принять человек.
+- Возвращайте `DENY`, когда действие точно нарушает boundary.
+- Храните state явно, если policy зависит от истории session.

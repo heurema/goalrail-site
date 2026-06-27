@@ -1,0 +1,90 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Контекстные политики",
+  "Policies управляют тем, что Goalrail agent может делать: allow, ask или deny в реальном времени.",
+  {
+    eyebrow: "Policies",
+    path: "/ru/docs/policies/overview",
+  },
+);
+
+# Контекстные политики
+
+Policies контролируют действия агента: tool calls, model requests, file ops и
+другие операции. Решение принимается в момент действия: **ALLOW**, **ASK** или
+**DENY**.
+
+## Почему contextual
+
+Обычные static rules проверяют только текущий запрос. Policies в Goalrail могут
+хранить state на протяжении session: накопленные расходы, количество tool calls,
+risk score, data labels и другие counters.
+
+Это позволяет выражать правила, которые prompt alone не удержит:
+
+- budget warnings и hard caps;
+- rate limits;
+- approval перед destructive actions;
+- model routing для простых и сложных задач;
+- блокировку PII или секретов.
+
+## Уровни применения
+
+| Level            | Scope                      | Как добавить                       |
+| ---------------- | -------------------------- | ---------------------------------- |
+| **Session**      | Только текущая session     | Попросить агента или включить в UI |
+| **Agent config** | Каждый запуск этого агента | `policies` block в YAML            |
+| **Server-wide**  | Все sessions на server     | Server config или REST API         |
+
+## Session-level policy
+
+Самый простой путь - попросить агента обычным языком:
+
+```
+Ask me before running any shell commands.
+Limit this session to $5 of model spend.
+Block access to all GitHub repos except myorg/frontend.
+```
+
+Goalrail подберет policy из registry, покажет параметры и попросит
+подтверждение.
+
+## YAML config
+
+```
+policies:
+  approve_file_ops:
+    type: function
+    handler: goalrail.policies.builtins.safety.ask_on_os_tools
+  rate_limit:
+    type: function
+    handler: goalrail.policies.builtins.safety.max_tool_calls_per_session
+    factory_params:
+      limit: 50
+```
+
+## Server-wide config
+
+```
+policies:
+  session_cost_guard:
+    type: function
+    function:
+      path: goalrail.policies.builtins.cost.cost_budget
+      arguments:
+        ask_thresholds_usd: [1.0]
+        max_cost_usd: 5.0
+```
+
+Запустите server с config:
+
+```
+goalrail server -c config.yaml
+```
+
+## Дальше
+
+- [Встроенные политики](/ru/docs/policies/builtin)
+- [Свои политики](/ru/docs/policies/custom)
+- [OS sandbox config](/ru/docs/policies/os-sandbox)

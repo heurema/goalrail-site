@@ -1,0 +1,18 @@
+<svg width="1332" height="770" viewBox="0 0 1332 770" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1332" height="770" rx="22" fill="#111018"/>
+  <rect x="28" y="28" width="1276" height="714" rx="18" fill="#17151D" stroke="#454052" stroke-width="2"/>
+  <rect x="28" y="28" width="1276" height="52" rx="18" fill="#24202F"/>
+  <circle cx="62" cy="54" r="7" fill="#FF6B6B"/>
+  <circle cx="88" cy="54" r="7" fill="#FFD166"/>
+  <circle cx="114" cy="54" r="7" fill="#5DD39E"/>
+  <text x="666" y="61" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#F4F2F7">Goalrail terminal</text>
+  <text x="72" y="136" font-family="Menlo, Consolas, monospace" font-size="22" fill="#A8A4B4">$ goalrail claude</text>
+  <text x="72" y="186" font-family="Menlo, Consolas, monospace" font-size="22" fill="#F4F2F7">Starting Claude Code through Goalrail...</text>
+  <text x="72" y="236" font-family="Menlo, Consolas, monospace" font-size="22" fill="#92D3B5">Web UI: http://localhost:6767</text>
+  <text x="72" y="286" font-family="Menlo, Consolas, monospace" font-size="22" fill="#F4F2F7">Session: release-review</text>
+  <text x="72" y="356" font-family="Menlo, Consolas, monospace" font-size="22" fill="#F4F2F7">Goalrail keeps terminal, browser, mobile, and desktop in sync.</text>
+  <rect x="72" y="448" width="742" height="116" rx="18" fill="#211E31" stroke="#494254"/>
+  <text x="104" y="496" font-family="Menlo, Consolas, monospace" font-size="20" fill="#F4F2F7">&gt; Run tests and summarize failures</text>
+  <text x="104" y="536" font-family="Menlo, Consolas, monospace" font-size="20" fill="#92D3B5">Policy check passed. Running...</text>
+  <text x="72" y="658" font-family="Menlo, Consolas, monospace" font-size="22" fill="#A8A4B4">goalrail.dev</text>
+</svg>

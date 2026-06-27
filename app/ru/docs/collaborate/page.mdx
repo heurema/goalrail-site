@@ -1,0 +1,49 @@
+import { pageMeta } from "@/lib/og";
+import Link from "next/link";
+
+export const metadata = pageMeta(
+  "Совместная работа",
+  "Делитесь live sessions, co-drive агентами и делайте forks между terminal, web UI и mobile.",
+  {
+    eyebrow: "Collaboration",
+    path: "/ru/docs/collaborate",
+  },
+);
+
+# Совместная работа
+
+Когда Goalrail server доступен команде, одну live session можно открыть
+нескольким людям. Участники видят output, пишут сообщения, оставляют comments и
+могут сделать fork, чтобы попробовать другой ход.
+
+## Share
+
+В <Link href="/ru/docs/interact/web-ui">web UI</Link> нажмите **Share** и
+выберите уровень доступа:
+
+- **VIEW** - читать output и history.
+- **COMMENT** - оставлять inline comments.
+- **EDIT** - писать агенту и управлять session.
+
+## Code execution risk
+
+Пользователь с EDIT может направлять агента, а агент выполняет code на runner
+host. Поэтому EDIT нужно давать только людям, которым вы доверяете запуск кода в
+этом окружении. Для review чаще достаточно VIEW или COMMENT.
+
+## Fork
+
+Fork создает новую session с тем же history до выбранной точки. Это удобно, если
+хочется проверить другой подход, не ломая основную ветку разговора.
+
+```
+goalrail run --fork <session_id>
+```
+
+## Где работает
+
+Terminal, web UI, desktop app и mobile UI подключаются к одному server. Вы
+можете начать в terminal, открыть UI на телефоне и продолжить работу из
+desktop app.
+
+Подробнее о deploy: [Общий сервер](/ru/docs/deploy/overview).

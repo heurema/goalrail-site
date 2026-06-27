@@ -1,0 +1,40 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Веб-интерфейс",
+  "Web UI Goalrail показывает live session, files, agents, shells, todos, comments и multimodal input.",
+  {
+    eyebrow: "Интерфейсы",
+    path: "/ru/docs/interact/web-ui",
+  },
+);
+
+# Веб-интерфейс
+
+Web UI - основной рабочий экран Goalrail. Он показывает live conversation,
+created files, sub-agents, running shells и todos.
+
+## Files
+
+Откройте созданный или измененный файл, посмотрите diff и исправьте текст прямо
+в editor. Агент увидит изменения и сможет продолжить работу.
+
+![Editing a file in the Goalrail web UI](/images/docs/goalrail-file-editor.svg)
+
+## Inline comments
+
+Можно выделить часть ответа агента и оставить comment. Агент получает привязку
+к конкретному месту и может адресно исправить результат.
+
+![Addressing an inline comment on agent output](/images/docs/goalrail-inline-comment.svg)
+
+## Images
+
+Перетащите screenshot, mockup или diagram в чат. Это удобно для frontend bugs,
+design reviews и задач, где текстового описания недостаточно.
+
+## Collaboration
+
+Если server доступен команде, одну session можно открыть нескольким людям:
+смотреть output, писать сообщения, оставлять comments и делать forks. Подробнее:
+[Совместная работа](/ru/docs/collaborate).

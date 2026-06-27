@@ -1,0 +1,41 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Harnesses",
+  "Harness определяет runtime, который исполняет agent loop внутри Goalrail.",
+  {
+    eyebrow: "Build",
+    path: "/ru/docs/build/harnesses",
+  },
+);
+
+# Harnesses
+
+Harness - это runtime, который исполняет agent loop. Goalrail не заменяет Claude
+Code, Codex или другой executor; он оборачивает их в общий session protocol.
+
+## Пример
+
+```
+executor:
+  type: goalrail
+  harness: claude-sdk
+  model: claude-sonnet-4-6
+```
+
+Для Codex можно выбрать другой harness:
+
+```
+executor:
+  type: goalrail
+  harness: codex
+  model: gpt-5
+```
+
+## Зачем это нужно
+
+- Один UI и API поверх разных runtimes.
+- Возможность переключать harness без переписывания tools и policies.
+- Общая история, comments, forks и approvals независимо от выбранного агента.
+
+См. также [Models & Credentials](/ru/docs/build/models).

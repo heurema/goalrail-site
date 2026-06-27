@@ -1,0 +1,37 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Omnibox",
+  "Omnibox - OS-level sandbox Goalrail для filesystem, network, environment и credentials boundaries.",
+  {
+    eyebrow: "Sandboxing",
+    path: "/ru/docs/omnibox",
+  },
+);
+
+# Omnibox
+
+Omnibox - secure OS-level sandbox для агентов. Он ограничивает filesystem,
+network, environment variables и доступ к credentials.
+
+Goalrail может запускать Claude Code, Codex и custom agents в одном sandbox
+contract, чтобы unattended work не получал больше доступа, чем нужно.
+
+## Что контролирует
+
+- **Filesystem**: какие paths доступны read/write.
+- **Network**: какие hosts или ports разрешены.
+- **Environment**: какие variables передаются внутрь.
+- **Credentials**: секреты не попадают напрямую в prompt и выдаются через
+  controlled access.
+
+## Как сочетается с cloud sandbox
+
+[Cloud sandbox host](/ru/docs/deploy/cloud-sandbox-host) отвечает за место
+запуска runner. Omnibox отвечает за доступы внутри этого runner. Их можно
+использовать вместе.
+
+## Дальше
+
+- [OS sandbox config](/ru/docs/policies/os-sandbox)
+- [Контекстные политики](/ru/docs/policies/overview)

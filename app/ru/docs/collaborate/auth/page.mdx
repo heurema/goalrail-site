@@ -1,0 +1,48 @@
+import { pageMeta } from "@/lib/og";
+
+export const metadata = pageMeta(
+  "Auth и SSO",
+  "Настройте auth для Goalrail server: встроенные accounts, OIDC SSO или trusted proxy headers.",
+  {
+    eyebrow: "Collaboration",
+    path: "/ru/docs/collaborate/auth",
+  },
+);
+
+# Auth и SSO
+
+Goalrail поддерживает несколько вариантов auth. Выберите самый простой вариант,
+который подходит вашему deploy.
+
+## Built-in accounts
+
+Для небольших команд можно включить встроенные accounts:
+
+```
+GOALRAIL_AUTH_ENABLED=1 goalrail server start
+```
+
+При первом запуске создайте admin account через web UI или terminal prompt.
+
+## OIDC SSO
+
+Для команды подключите OIDC provider: Google, GitHub, Okta или корпоративный
+identity provider.
+
+Типичная server config содержит issuer, client id, client secret и allowed
+domains. Секреты храните в environment variables или secret manager, а не в git.
+
+## Trusted headers
+
+Если перед Goalrail стоит reverse proxy, который уже проверяет пользователя,
+server может читать identity из trusted header, например `X-Forwarded-Email`.
+Используйте этот вариант только если proxy действительно защищает upstream.
+
+## Migration
+
+Если вы начали с built-in accounts, а потом переходите на OIDC, сначала
+сделайте backup database и проверьте mapping email domains.
+
+```
+goalrail debug migrate-accounts-to-oidc <database-url> --domain yourcompany.com --commit
+```
