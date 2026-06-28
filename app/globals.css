@@ -1,51 +1,51 @@
 :root {
-  color-scheme: light;
-  /* ---- light palette (default) ---- */
-  --bg: #ffffff;
-  --bg-soft: #faf7f9;
-  --bg-grey-pink: #f6f3f7;
-  --fg: #15131a;
-  --fg-soft: #5c5765;
-  --border: #ece8ee;
-  --border-strong: #d9d3dd;
-  --accent: #ed1c9c;
-  --accent-soft: #fce6f4;
-  --accent-strong: #d3148b; /* darker pink for hovers/active */
-  --accent-text: #ad0c72; /* pink text legible on --accent-soft */
-  --code-bg: #1a1620;
-  --code-fg: #f4eef2;
-  --code-inline-fg: #ad0c72; /* inline <code> text */
-  --btn-bg: #ffffff;
-  --nav-bg: rgba(255, 255, 255, 0.82);
+  color-scheme: dark;
+  /* ---- Dracula codex-theme-v1 palette ---- */
+  --bg: #282a36;
+  --bg-soft: #343746;
+  --bg-grey-pink: #3b3d4f;
+  --fg: #f8f8f2;
+  --fg-soft: #cfcfc7;
+  --border: #44475a;
+  --border-strong: #6272a4;
+  --accent: #ff79c6;
+  --accent-soft: #3b2b44;
+  --accent-strong: #ff92d0;
+  --accent-text: #ffb6e1;
+  --code-bg: #282a36;
+  --code-fg: #f8f8f2;
+  --code-inline-fg: #ff79c6;
+  --btn-bg: #343746;
+  --nav-bg: rgba(40, 42, 54, 0.92);
   --max: 56rem;
   --nav-h: 57px; /* matches the rendered height of .nav */
   --radius: 12px;
-  --font-sans: system-ui, sans-serif;
+  --font-sans: "Satoshi", system-ui, sans-serif;
   --font-mono:
     ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono",
     monospace;
 }
 
-/* ---- dark palette: follow the OS preference. ---- */
+/* ---- Same palette under OS dark preference; Goalrail has one site theme. ---- */
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --bg: #15131a;
-    --bg-soft: #1f1b27;
-    --bg-grey-pink: #221d2b;
-    --fg: #f4eef2;
-    --fg-soft: #a59faf;
-    --border: #322c3b;
-    --border-strong: #443c4f;
-    --accent: #ff4fb3;
-    --accent-soft: #3a1f30;
-    --accent-strong: #ff6dc0;
-    --accent-text: #ff8acb;
-    --code-bg: #100c16;
-    --code-fg: #f4eef2;
-    --code-inline-fg: #ff8acb;
-    --btn-bg: #1f1b27;
-    --nav-bg: rgba(21, 19, 26, 0.82);
+    --bg: #282a36;
+    --bg-soft: #343746;
+    --bg-grey-pink: #3b3d4f;
+    --fg: #f8f8f2;
+    --fg-soft: #cfcfc7;
+    --border: #44475a;
+    --border-strong: #6272a4;
+    --accent: #ff79c6;
+    --accent-soft: #3b2b44;
+    --accent-strong: #ff92d0;
+    --accent-text: #ffb6e1;
+    --code-bg: #282a36;
+    --code-fg: #f8f8f2;
+    --code-inline-fg: #ff79c6;
+    --btn-bg: #343746;
+    --nav-bg: rgba(40, 42, 54, 0.92);
   }
 }
 
@@ -78,7 +78,7 @@ a:hover {
 }
 .docs-main a {
   text-decoration: underline;
-  text-decoration-color: rgba(237, 28, 156, 0.3);
+  text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
   text-underline-offset: 2px;
 }
 .docs-main a:hover {
@@ -835,28 +835,21 @@ figcaption {
   width: 100%;
 }
 
-/* ---- dark-mode asset handling ----
-   <img>-embedded screenshots can't read the page theme, so we swap themed
-   variants where an image still needs it. */
-.pillar-visual .theme-dark-only,
-.pillar-lightbox .theme-dark-only {
+/* ---- dark-only asset handling ----
+   <img>-embedded screenshots can't read CSS tokens, so always prefer the
+   dark variant when an asset ships one. */
+.pillar-visual .theme-light-only,
+.pillar-lightbox .theme-light-only {
   display: none;
 }
-
-@media (prefers-color-scheme: dark) {
-  .pillar-visual .theme-light-only,
-  .pillar-lightbox .theme-light-only {
-    display: none;
-  }
-  .pillar-visual .theme-dark-only,
-  .pillar-lightbox .theme-dark-only {
-    display: block;
-  }
-  .section-graphic {
-    background: #faf7f9;
-    border-radius: var(--radius);
-    padding: 1.25rem;
-  }
+.pillar-visual .theme-dark-only,
+.pillar-lightbox .theme-dark-only {
+  display: block;
+}
+.section-graphic {
+  background: var(--bg-soft);
+  border-radius: var(--radius);
+  padding: 1.25rem;
 }
 .section-code {
   width: 100%;
@@ -941,7 +934,7 @@ figcaption {
     background 0.15s;
 }
 .prev-next-link:hover {
-  border-color: #d9d3dd;
+  border-color: var(--border-strong);
   background: var(--bg-soft);
   text-decoration: none;
 }

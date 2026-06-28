@@ -11,6 +11,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:links": "node scripts/check-links.mjs",
+    "test:theme": "node scripts/check-theme-tokens.mjs",
     "test:go-routes": "node --no-warnings scripts/check-go-routes.mjs",
     "fmt": "prettier --write .",
     "fmt:check": "prettier --check .",

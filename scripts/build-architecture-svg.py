@@ -6,14 +6,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "public/images/architecture.svg"
 
-FG = "#15131a"
-FG_SOFT = "#5c5765"
-ACCENT = "#ed1c9c"
-GREEN = "#92d3b5"
-BORDER = "#ece8ee"
-BG = "#fbf9fc"
-CARD = "#ffffff"
-FONT = "system-ui, -apple-system, Segoe UI, Roboto, sans-serif"
+FG = "#f8f8f2"
+FG_SOFT = "#cfcfc7"
+ACCENT = "#ff79c6"
+GREEN = "#50fa7b"
+BORDER = "#44475a"
+BG = "#282a36"
+CARD = "#343746"
+FONT = "Satoshi, system-ui, -apple-system, Segoe UI, Roboto, sans-serif"
 
 
 def text(x, y, value, size=18, weight=500, fill=FG, anchor="middle"):
@@ -80,10 +80,10 @@ svg = [
     rect(590, 128, 250, 162, 24),
     mark(616, 154, 0.82),
     text(736, 184, "Server", 24, 780),
-    pill(622, 210, 90, "Policies", ACCENT, "#ffffff"),
-    pill(722, 210, 90, "History", ACCENT, "#ffffff"),
-    pill(622, 252, 90, "Catalog", "#fff0f8", FG),
-    pill(722, 252, 90, "MCPs", "#fff0f8", FG),
+    pill(622, 210, 90, "Policies", ACCENT, BG),
+    pill(722, 210, 90, "History", ACCENT, BG),
+    pill(622, 252, 90, "Catalog", "#3b2b44", FG),
+    pill(722, 252, 90, "MCPs", "#3b2b44", FG),
     card(900, 110, "Clients", ["Terminal", "Web", "Desktop", "Mobile", "REST API"], 230),
     rect(330, 360, 180, 92, 18),
     text(420, 396, "Hosts", 20, 750),

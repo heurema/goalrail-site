@@ -22,59 +22,35 @@ const ApiReferenceReact = dynamic(
   { ssr: false },
 );
 
-// Map the site's brand tokens (app/globals.css) onto Scalar's
-// `--scalar-*` variables. We define them under `.light-mode` and
-// `.dark-mode` — the same selectors Scalar toggles — so the reference
-// follows the OS color scheme exactly like the rest of the site (which
-// is driven by `prefers-color-scheme`). `theme: "none"` below disables
-// Scalar's preset themes so these values win.
+// Map the site's Dracula tokens (app/globals.css) onto Scalar's
+// `--scalar-*` variables. Define the same values under Scalar's
+// `.light-mode` and `.dark-mode` selectors so its internal mode cannot drift.
 const BRAND_CSS = `
-.light-mode {
-  --scalar-color-1: #15131a;
-  --scalar-color-2: #5c5765;
-  --scalar-color-3: #8c8694;
-  --scalar-color-accent: #ed1c9c;
-  --scalar-background-1: #ffffff;
-  --scalar-background-2: #faf7f9;
-  --scalar-background-3: #f6f3f7;
-  --scalar-background-accent: #fce6f4;
-  --scalar-border-color: #ece8ee;
-
-  --scalar-sidebar-background-1: #faf7f9;
-  --scalar-sidebar-color-1: #15131a;
-  --scalar-sidebar-color-2: #5c5765;
-  --scalar-sidebar-border-color: #ece8ee;
-  --scalar-sidebar-item-hover-background: #f6f3f7;
-  --scalar-sidebar-item-hover-color: #15131a;
-  --scalar-sidebar-item-active-background: #fce6f4;
-  --scalar-sidebar-color-active: #ad0c72;
-  --scalar-sidebar-search-background: #ffffff;
-  --scalar-sidebar-search-border-color: #ece8ee;
-}
+.light-mode,
 .dark-mode {
-  --scalar-color-1: #f4eef2;
-  --scalar-color-2: #a59faf;
-  --scalar-color-3: #7c7686;
-  --scalar-color-accent: #ff4fb3;
-  --scalar-background-1: #15131a;
-  --scalar-background-2: #1f1b27;
-  --scalar-background-3: #221d2b;
-  --scalar-background-accent: #3a1f30;
-  --scalar-border-color: #322c3b;
+  --scalar-color-1: #f8f8f2;
+  --scalar-color-2: #cfcfc7;
+  --scalar-color-3: #6272a4;
+  --scalar-color-accent: #ff79c6;
+  --scalar-background-1: #282a36;
+  --scalar-background-2: #343746;
+  --scalar-background-3: #3b3d4f;
+  --scalar-background-accent: #3b2b44;
+  --scalar-border-color: #44475a;
 
-  --scalar-sidebar-background-1: #1f1b27;
-  --scalar-sidebar-color-1: #f4eef2;
-  --scalar-sidebar-color-2: #a59faf;
-  --scalar-sidebar-border-color: #322c3b;
-  --scalar-sidebar-item-hover-background: #221d2b;
-  --scalar-sidebar-item-hover-color: #f4eef2;
-  --scalar-sidebar-item-active-background: #3a1f30;
-  --scalar-sidebar-color-active: #ff8acb;
-  --scalar-sidebar-search-background: #15131a;
-  --scalar-sidebar-search-border-color: #322c3b;
+  --scalar-sidebar-background-1: #282a36;
+  --scalar-sidebar-color-1: #f8f8f2;
+  --scalar-sidebar-color-2: #cfcfc7;
+  --scalar-sidebar-border-color: #44475a;
+  --scalar-sidebar-item-hover-background: #44475a;
+  --scalar-sidebar-item-hover-color: #f8f8f2;
+  --scalar-sidebar-item-active-background: #3b2b44;
+  --scalar-sidebar-color-active: #ff79c6;
+  --scalar-sidebar-search-background: #343746;
+  --scalar-sidebar-search-border-color: #44475a;
 }
 .light-mode, .dark-mode {
-  --scalar-font: system-ui, sans-serif;
+  --scalar-font: "Satoshi", system-ui, sans-serif;
   --scalar-radius: 10px;
 }
 
@@ -101,8 +77,8 @@ export default function ApiReference() {
         // from a public docs site would mostly fail). Per-language code
         // samples still render. This also hides the auth panel.
         hideTestRequestButton: true,
-        // The rest of the site has no manual theme switch — it follows
-        // the OS scheme — so hide Scalar's toggle to match.
+        // The rest of the site is fixed to the Dracula dark theme, so
+        // hide Scalar's toggle to match.
         hideDarkModeToggle: true,
         // Disable Scalar's hosted "Ask AI" agent and the "Generate MCP"
         // install button. Both default to on for local URLs (which is why
