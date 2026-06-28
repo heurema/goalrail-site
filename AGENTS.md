@@ -14,6 +14,7 @@ All rules in `.agents/rules/` are part of the working agreement and must be foll
 
 - [`.agents/rules/branching-rule.mdc`](.agents/rules/branching-rule.mdc) — **Branching workflow.** All work must happen on a dedicated feature branch; never commit directly to `main`. Before making any change, check the current branch and, if on `main`, create a new branch (`feat/`, `fix/`, `chore/`, `refactor/`, or `test/` prefix) using `git checkout -b`. Offer the user a suggested branch name and the option to provide their own.
 - [`.agents/rules/bun-clean-lock-rule.mdc`](.agents/rules/bun-clean-lock-rule.mdc) — **bun.lock proxy stripping.** Before opening any PR, clear private npm registry proxy URLs from the resolution field of `bun.lock` (reset to `""`). Run `bun run strip-lock-proxy` to clean and `bun run strip-lock-proxy:check` to verify. A committed pre-commit hook at `.githooks/pre-commit` (activate via `bun run setup-hooks`) automates this whenever `bun.lock` is staged.
+- [`.agents/rules/site-deploy-rule.mdc`](.agents/rules/site-deploy-rule.mdc) — **Website-only deploys.** Deploy only `heurema/goalrail-site` through `/Users/vi/personal/standalone/infra/scripts/deploy-goalrail-site.sh`. Do not deploy the Goalrail app/server, Cloudflare Workers, Vercel, packages, desktop releases, or image workflows.
 
 When new rules are added to `.agents/rules/`, treat them as always-on guidance and add a reference here.
 

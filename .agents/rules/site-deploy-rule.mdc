@@ -1,0 +1,92 @@
+---
+description: Deploy only the Goalrail public website through the infra GitOps script.
+alwaysApply: true
+---
+
+# Website Deploy Rule
+
+This repository owns the public Goalrail website only. Website deployment is
+handled by the GitOps entrypoint in `/Users/vi/personal/standalone/infra` and is
+separate from the Goalrail app/server, desktop releases, package publishing,
+Cloudflare Workers, Vercel, and any infrastructure in `heurema/goalrail`.
+
+## Scope
+
+- Deploy only this repo: `heurema/goalrail-site`.
+- Deploy only the public website served at `https://goalrail.dev`.
+- Keep app builds separate. If the request also mentions desktop/iOS/app builds,
+  use the app build instructions in `heurema/goalrail` and do not treat them as
+  part of the website server deploy.
+- Do not run `wrangler deploy`.
+- Do not run app/server deploys, package releases, image publishing, Vercel
+  import/deploy, or release workflows from `heurema/goalrail`.
+- Do not bump package/app versions for a build-only task. Version changes happen
+  only when the user explicitly asks for a release/version bump.
+- Do not invent server hosts, paths, credentials, service names, or restart
+  commands. Production is updated by the infra GitOps script, not direct SSH.
+
+## Required Inputs
+
+The approved deploy entrypoint is:
+
+```bash
+cd /Users/vi/personal/standalone/infra
+scripts/deploy-goalrail-site.sh --commit-push --reconcile
+```
+
+The script resolves `/Users/vi/personal/heurema/goalrail-site` `HEAD`, verifies
+that the commit is already reachable from `origin/main`, updates
+`GOALRAIL_SITE_REF` in
+`kubernetes/apps/heurema/prod/goalrail-site/values.yaml`, validates Kustomize,
+commits and pushes the infra GitOps change, reconciles Flux and the HelmRelease,
+then verifies the deployed ref and rollout.
+
+If the site commit is not reachable from `origin/main`, stop and land/push the
+site change first. Do not bypass this by deploying a private branch ref unless
+the user explicitly asks for a one-off production override.
+
+## Local Gate
+
+Run these checks before any server change:
+
+```bash
+git status --short --branch
+bun install --frozen-lockfile
+bun run strip-lock-proxy:check
+bun run lint
+bun run lint:links
+bun run test:theme
+bun run test:go-routes
+bun run build
+```
+
+If any check fails, do not deploy. Fix the site or report the blocker.
+
+## Deploy Flow
+
+After the local gate passes, land and push the site change to `origin/main`.
+Then deploy through infra:
+
+```bash
+cd /Users/vi/personal/standalone/infra
+git status --short --branch
+scripts/deploy-goalrail-site.sh --commit-push --reconcile
+```
+
+Keep secrets out of logs. Never print env files, tokens, private SSH config, or
+process manager secrets.
+
+## Post-Deploy Gate
+
+After deployment, verify the public site:
+
+```bash
+curl -fsSI https://goalrail.dev/
+curl -fsSI https://goalrail.dev/en
+curl -fsSI https://goalrail.dev/ru
+curl -fsS https://goalrail.dev/llms.txt >/dev/null
+```
+
+Report the branch, commit SHA, checks run, deploy entrypoint used, and smoke-test
+results. If the deploy was blocked, report the exact missing input or failing
+command.

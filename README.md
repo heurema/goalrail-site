@@ -41,5 +41,36 @@ Edit the GitHub / Telegram / package links in `components/links.js`.
 
 ## Deploy
 
-Push to a Git repo and import it into Vercel — it auto-detects Next.js, no
-configuration needed.
+The public website is deployed from this repository through the infra GitOps
+entrypoint in `/Users/vi/personal/standalone/infra`. Do not use Vercel,
+Cloudflare, direct SSH, or app/server deploy flows for this repo unless the
+deploy contract is explicitly changed.
+
+Before touching the server, run the local gate:
+
+```bash
+bun install --frozen-lockfile
+bun run strip-lock-proxy:check
+bun run lint
+bun run lint:links
+bun run test:theme
+bun run test:go-routes
+bun run build
+```
+
+After the site commit is landed and pushed to `origin/main`, deploy from infra:
+
+```bash
+cd /Users/vi/personal/standalone/infra
+scripts/deploy-goalrail-site.sh --commit-push --reconcile
+```
+
+The deploy script updates `GOALRAIL_SITE_REF`, validates Kubernetes manifests,
+commits and pushes the infra GitOps change, reconciles Flux, and verifies the
+deployed ref and rollout. Agents must follow
+[`.agents/rules/site-deploy-rule.mdc`](.agents/rules/site-deploy-rule.mdc) and
+smoke test `https://goalrail.dev/`, `/en`, `/ru`, and `/llms.txt` after deploy.
+
+Application builds are not part of this website deploy. Build desktop/iOS/app
+artifacts from `heurema/goalrail` using that repository's app build instructions;
+do not bump app/package versions unless the release task explicitly asks for it.
