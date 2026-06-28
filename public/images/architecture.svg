@@ -7,10 +7,12 @@
 <rect x="590" y="128" width="250" height="162" rx="24" ry="24" fill="#343746" stroke="#44475a" stroke-width="2"/>
 
 <g transform="translate(616 154) scale(0.82)">
-  <rect x="0" y="0" width="56" height="56" rx="15" fill="#17151D" stroke="#5E6678" stroke-width="2"/>
-  <path d="M14 19H27C34.18 19 40 24.82 40 32C40 39.18 34.18 45 27 45H18" stroke="#F4F2F7" stroke-width="5" stroke-linecap="round"/>
-  <path d="M17 32H31" stroke="#F4F2F7" stroke-width="5" stroke-linecap="round"/>
-  <path d="M26 23L35 32L26 41" stroke="#50fa7b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="0.8" y="0.8" width="54.4" height="54.4" rx="14.5" fill="#1B1C22" stroke="#2F323B" stroke-width="1.6"/>
+  <rect x="4" y="4" width="48" height="48" rx="12.5" fill="none" stroke="#DADCE3" stroke-width="2.2" opacity="0.75"/>
+  <rect x="7" y="7" width="42" height="42" rx="10.5" fill="none" stroke="#6F7480" stroke-width="1.2" opacity="0.75"/>
+  <path d="M37 15H25C16.7 15 10 21.7 10 30C10 38.3 16.7 45 25 45H37" stroke="#E4E5EA" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M25 30H42C47 30 51 34 51 39C51 44 47 48 42 48H32" stroke="#E4E5EA" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M41 48L50 55" stroke="#E4E5EA" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <text x="736" y="184" font-family="Satoshi, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="24" font-weight="780" fill="#f8f8f2" text-anchor="middle">Server</text>
 <rect x="622" y="210" width="90" height="34" rx="17" fill="#ff79c6"/><text x="667.0" y="232" font-family="Satoshi, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14" font-weight="650" fill="#282a36" text-anchor="middle">Policies</text>
@@ -32,10 +34,12 @@
 <path d="M715 290 C 715.0 290, 715.0 348, 715 348" stroke="#ff79c6" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-dasharray="1 8"/>
 
 <g transform="translate(91 32) scale(0.52)">
-  <rect x="0" y="0" width="56" height="56" rx="15" fill="#17151D" stroke="#5E6678" stroke-width="2"/>
-  <path d="M14 19H27C34.18 19 40 24.82 40 32C40 39.18 34.18 45 27 45H18" stroke="#F4F2F7" stroke-width="5" stroke-linecap="round"/>
-  <path d="M17 32H31" stroke="#F4F2F7" stroke-width="5" stroke-linecap="round"/>
-  <path d="M26 23L35 32L26 41" stroke="#50fa7b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="0.8" y="0.8" width="54.4" height="54.4" rx="14.5" fill="#1B1C22" stroke="#2F323B" stroke-width="1.6"/>
+  <rect x="4" y="4" width="48" height="48" rx="12.5" fill="none" stroke="#DADCE3" stroke-width="2.2" opacity="0.75"/>
+  <rect x="7" y="7" width="42" height="42" rx="10.5" fill="none" stroke="#6F7480" stroke-width="1.2" opacity="0.75"/>
+  <path d="M37 15H25C16.7 15 10 21.7 10 30C10 38.3 16.7 45 25 45H37" stroke="#E4E5EA" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M25 30H42C47 30 51 34 51 39C51 44 47 48 42 48H32" stroke="#E4E5EA" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M41 48L50 55" stroke="#E4E5EA" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <text x="143" y="60" font-family="Satoshi, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="22" font-weight="780" fill="#f8f8f2" text-anchor="start">Goalrail</text>
 </svg>

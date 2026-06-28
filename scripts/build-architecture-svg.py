@@ -9,7 +9,6 @@ OUT = ROOT / "public/images/architecture.svg"
 FG = "#f8f8f2"
 FG_SOFT = "#cfcfc7"
 ACCENT = "#ff79c6"
-GREEN = "#50fa7b"
 BORDER = "#44475a"
 BG = "#282a36"
 CARD = "#343746"
@@ -40,10 +39,12 @@ def pill(x, y, w, value, fill="#f7eef5", fg=FG):
 def mark(x, y, scale=1):
     return f"""
 <g transform="translate({x} {y}) scale({scale})">
-  <rect x="0" y="0" width="56" height="56" rx="15" fill="#17151D" stroke="#5E6678" stroke-width="2"/>
-  <path d="M14 19H27C34.18 19 40 24.82 40 32C40 39.18 34.18 45 27 45H18" stroke="#F4F2F7" stroke-width="5" stroke-linecap="round"/>
-  <path d="M17 32H31" stroke="#F4F2F7" stroke-width="5" stroke-linecap="round"/>
-  <path d="M26 23L35 32L26 41" stroke="{GREEN}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="0.8" y="0.8" width="54.4" height="54.4" rx="14.5" fill="#1B1C22" stroke="#2F323B" stroke-width="1.6"/>
+  <rect x="4" y="4" width="48" height="48" rx="12.5" fill="none" stroke="#DADCE3" stroke-width="2.2" opacity="0.75"/>
+  <rect x="7" y="7" width="42" height="42" rx="10.5" fill="none" stroke="#6F7480" stroke-width="1.2" opacity="0.75"/>
+  <path d="M37 15H25C16.7 15 10 21.7 10 30C10 38.3 16.7 45 25 45H37" stroke="#E4E5EA" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M25 30H42C47 30 51 34 51 39C51 44 47 48 42 48H32" stroke="#E4E5EA" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M41 48L50 55" stroke="#E4E5EA" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
 </g>"""
 
 

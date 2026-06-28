@@ -32,7 +32,13 @@ export const metadata = {
     images: [`${siteUrl}/images/goalrail-social-card.svg`],
   },
   icons: {
-    icon: "/images/favicon.svg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 
