@@ -46,6 +46,10 @@ policy_modules:
 goalrail server -c config.yaml
 ```
 
+Флаг `-c` - короткая форма `--config`. Если его не передать, local server
+читает `~/.goalrail/config.yaml`, когда файл существует. Docker deployments
+читают `/data/config.yaml`.
+
 После этого policy можно выбрать в UI, добавить через chat или объявить в YAML.
 
 ## Практика

@@ -14,6 +14,24 @@ export const metadata = pageMeta(
 Web UI - основной рабочий экран Goalrail. Он показывает live conversation,
 created files, sub-agents, running shells и todos.
 
+## Sessions и projects
+
+Все sessions видны в sidebar: можно вернуться к прошлой conversation, открыть
+новую и переключаться между agents. Sessions сохраняются после refresh и
+restart server.
+
+Related sessions можно сгруппировать в `Project`. Project отображается как
+collapsible folder в sidebar. Вложенных projects нет, и одна session может
+принадлежать только одному project.
+
+Project выбирается в двух местах:
+
+- при создании session: в new-chat composer через chip `Project`;
+- для существующей session: через menu `...` и действие `Move session`.
+
+Из project можно сразу создать новую session. Если убрать session из project,
+она вернется в раздел `Chats`; удаление project архивирует все его sessions.
+
 ## Files
 
 Откройте созданный или измененный файл, посмотрите diff и исправьте текст прямо
