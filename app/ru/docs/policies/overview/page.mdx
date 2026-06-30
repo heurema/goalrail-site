@@ -77,6 +77,12 @@ policies:
         max_cost_usd: 5.0
 ```
 
+Server-wide policies используют формат `function: {path, arguments}`, а не
+`handler` / `factory_params`. Передайте config явно через
+`goalrail server -c config.yaml` или положите его в default path:
+`~/.goalrail/config.yaml` для local server и `/data/config.yaml` для Docker.
+После изменения config server нужно перезапустить.
+
 Запустите server с config:
 
 ```
